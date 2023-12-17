@@ -53,6 +53,9 @@ main {
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     height: 100%;
 }
 
@@ -72,4 +75,30 @@ main {
 
 .menu-icon {
     width: 18px;
+}
+
+.list {
+    font-size: 24px;
+}
+
+.list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list ul li a {
+    display: block;
+    width: fit-content;
+}
+
+.list ul li a:hover {
+    color: #0EA5E9;
+    transition: all 0.4s;
+    transform: scale(1.05);
+}
+
+.list ul li a:before {
+    content: '\2743';
+    margin-right: 6px;
 }
