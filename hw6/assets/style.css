@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Tmpl main styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+section, header, footer {
+    width: 100%;
+}
+
+header {
+    background: #EEEFF1;
+    position: sticky;
+    top: 0;
+}
+
+footer {
+    background: #34547A;
+}
+
+.navigation, .wrapper {
+    display: block;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 540px;
+}
+
+/* Nav styles */
+
+.navigation {
+    min-height: 80px;
+    position: relative;
+}
+
+.navigation > * {
+    position: absolute;
+    bottom: 0;
+}
+
+.navigation.sticky {
+    background-color: white;
+    max-width: unset;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.navigation.sticky > * {
+    top: 30px;
+    display: inline-block;
+    left: 37.5%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.navigation ul li {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.navigation ul li a {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164.063%;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navigation ul li:not(:first-child) a {
+    margin-left: 42px;
+}
+
+.navigation ul li a:hover, .navigation ul li a:focus {
+    transition: all 0.4s;
+    color: #34547A;
+} 
+
+/* titles */
+
+.intro h1 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 164.063%;
+}
+
+.about-content h2, .process-content h2 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* text */
+
+.text {
+    color: #727272;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164.063%;
+}
+
+/* Buttons */
+
+.btn {
+    padding: 16px 32px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164.063%;
+    letter-spacing: 1.6px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    transition: all 0.4s;
+}
+
+/* Intro styles */
+
+.intro {
+    background: #EEEFF1;
+}
+
+.intro-content {
+    padding: 150px 0 140px;
+}
+
+.intro p {
+    margin: 60px 0 65px;
+}
+
+.btn.cto {
+    background: #34547A;
+    color: white;
+}
+
+/* About styles */
+
+.about-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 112px 0 100px;
+}
+
+/* Works styles */
+
+.works {
+    width: 100%;
+    padding: 100px 0;
+    background: #34547A;
+    text-align: center;
+}
+
+.works .row {
+    white-space: nowrap;
+}
+
+.works .row > * {
+    display: inline-block;
+    margin-right: 145px;
+    font-size: 16px;
+}
+
+.works .row > *:last-child {
+    margin-right: 0;
+}
+
+.item img {
+    float: left;
+    margin-right: 20px; 
+}
+
+.item .item-value,
+.item .item-name {
+    display: block;
+    color: white;
+}
+
+.item-value {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.item-name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 164.063%;
+}
+
+/* Process styles */
+
+.process {
+    padding-bottom: 100px;
+}
+
+.process-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0 0;
+    margin-bottom: 50px;
+}
+
+/* Contacts css */
+
+.contacts {
+    padding: 50px 0;
+    margin: 0 auto;
+    color: white;
+}
+
+.contacts ul li {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.contacts ul li:not(:first-child) {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 400;
+}
