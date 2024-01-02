@@ -1,0 +1,85 @@
+/* Common theme styles */
+
+.header,
+.footer,
+.hero__wrapper,
+.mob__wrapper,
+.info__wrapper,
+.download__wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Text & titles */
+
+.title {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    margin: 0;
+}
+
+.text {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0.2px;
+    color: #737373;
+}
+
+.title.white, 
+.text.white {
+    color: #FFF;
+}
+
+.text.bold {
+    font-weight: 700;
+}
+
+.text.accent {
+    color: #FA4A0C;
+    font-weight: 700;
+}
+
+/* Buttons */
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 58px;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0.1px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn__cto {
+    border-radius: 30px;
+    background: #FA4A0C;
+    box-shadow: 0px 10px 30px 0px rgba(183, 50, 39, 0.20);
+    border: 1px solid #FA4A0C;
+    position: relative;
+    z-index: 10;
+}
+
+.btn__cto:last-child {
+    background: transparent;
+    border-radius: 30px;
+    border: 1px solid #FFF;
+}

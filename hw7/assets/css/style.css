@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header block */
+
+.header__wrapper,
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 40px 28px 70px;
+}
+
+.header__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 94px;
+}
+
+.header__item a {
+    color: #252B42;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    transition: color 0.4s ease;
+}
+
+.header__item a:hover {
+    color: #FA4A0C;
+}
+
+.header.sticky {
+    background: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    max-width: unset;
+}
+
+.sticky .header__wrapper {
+    padding: 12px 40px 12px 70px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+/* end Header block */
+/* Hero section */
+
+.hero {
+    background: url("../../public/img/intro-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
+}
+
+.hero .wrapper {
+    padding: 72px 0 146px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title__hero {
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    max-width: 1024px;
+}
+
+.hero__cto {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding-top: 48px;
+}
+
+.hero .wrapper p {
+    margin-bottom: 17px;
+}
+
+.hero .wrapper h1 {
+    margin-bottom: 27px;
+}
+
+/* end Hero section */
+/* Mobs section */
+
+.mob {
+    max-height: 530px;
+}
+
+.mob__wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -268px;
+}
+
+.mob img:first-child {
+    position: relative;
+    left: 15px;
+    z-index: 5;
+    filter: drop-shadow(50px 30px 150px rgba(46, 4, 4, 0.21));
+}
+
+.mob img:last-child {
+    position: relative;
+    left: -220px;
+    top: 25px
+}
+
+/* end Mobs section */
+/* How app works */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+}
+
+.info__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 72px;
+    border-top: 3px solid #E4E4E4;
+}
+
+.info__title {
+    font-size: 44px;
+    font-weight: 600;
+    color: black;
+}
+
+.info__item {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.info__item img {
+    filter: drop-shadow(50px 30px 150px rgba(46, 4, 4, 0.21));
+}
+
+.info__items li:nth-child(even) .info__item {
+    flex-direction: row-reverse;
+}
+
+.info__item-inner {
+    display: flex;
+    flex-direction: column;
+    max-width: 561px;
+}
+
+/* end How app works section */
+/* Download section */
+
+.download {
+    background: url("../../public/img/download-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
+    padding: 145px 0 135px;
+}
+
+.download__wrapper {
+    display: flex;
+    color: #FFF;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download__text {
+    padding: 20px 0 60px;
+}
+
+.download__cto {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn__cto.rounded-md {
+    border-radius: 10px;
+}
+
+/* end Download section */
+/* Footer */
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.social a {
+    transition: all 0.4s;
+}
+
+.social a:hover {
+    transform: scale(1.05);
+}
+
+.copywright {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; 
+    letter-spacing: 0.1px;
+    color: #5C5C5C;
+}
+
+/* end Footer */
