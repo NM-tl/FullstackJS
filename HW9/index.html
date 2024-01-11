@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadoo</title>
-    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/normilize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/swiper.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="header">
-        <nav class="wrapper">
+        <nav class="wrapper header__wrapper">
             <img src="./public/images/Logo.svg" alt="logo">
             <ul>
                 <li>
@@ -33,20 +33,20 @@
                     <a href="#">Login</a>
                 </li>
                 <li>
-                    <a href="#" class="btn">
+                   <div class="header__controls">
+                        <a href="#" class="btn">
                             Sign up
-                    </a>
-                </li>
-                <li>
-                    <select name="lang" id="lang">
-                        <option value="en" selected>EN</option>
-                        <option value="ua">UA</option>
-                    </select>
+                        </a>
+                        <select name="lang" id="lang">
+                            <option value="en" selected>EN</option>
+                            <option value="ua">UA</option>
+                        </select>
+                   </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="main">
+    <main>
         <section class="hero">
             <div class="wrapper hero__wrapper">
                 <div class="hero__content">
@@ -54,7 +54,7 @@
                         Best Destinations around the world
                     </span>
                     <h1 class="hero__title">
-                        Travel, enjoy and live a new and full life
+                        Travel, <span>enjoy</span> and live a new and full life
                     </h1>
                     <p class="text">
                         Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
@@ -63,16 +63,13 @@
                         <button type="button" class="btn btn__hero">
                             Find out more
                         </button>
-                        <div class="demo">
-                            <button type="button" class="btn btn__demo">
-                                <img src="./public/images/Play_button.png" alt="demo">
-                            </button>
-                            <a href="#" class="demo__link">
-                                Play Demo
-                            </a>
-                        </div>
+                        <a href="#" class="btn__demo">
+                            <img src="./public/images/Play_button.png" alt="demo">
+                            Play Demo
+                        </a>
                     </div>
                 </div>
+                <img class="hero__bg" src="./public/images/hero-bg.svg" alt="decoration">
                 <div class="hero__illustartions">
                     <img src="./public/images/Traveller.png" alt="traveller">
                     <img src="./public/images/plane.svg" alt="plane1">
@@ -82,50 +79,62 @@
         </section>
         <section class="services">
             <div class="wrapper services__wrapper">
-                <img src="./public/images/services-decor.png" alt="decoration">
-                <span class="subtitle">
+                <img src="./public/images/services-decor.png" alt="decoration" class="service__decoration">
+                <span class="subtitle uppercase">
                     Category
                 </span>
                 <h2 class="title">
                     We Offer Best Services
                 </h2>
                 <div class="services__grid">
-                    <div class="services__card">
-                        <img src="./public/images/weather.svg" alt="weather">
-                        <h3 class="card__title">
-                            Calculated Weather 
-                        </h3>
-                        <p class="text">
-                            Built Wicket longer admire do barton vanity itself do in it.
-                        </p>
+                    <div class="service__wrapper">
+                        <div class="services__card">
+                            <img src="./public/images/weather.svg" alt="weather">
+                            <h3 class="card__title">
+                                Calculated Weather 
+                            </h3>
+                            <p class="text">
+                                Built Wicket longer admire do barton vanity itself do in it.
+                            </p>
+                        </div>
+                        <div class="card__bow"></div>   
                     </div>
-                    <div class="services__card">
-                        <img src="./public/images/flights.svg" alt="weather">
-                        <h3 class="card__title">
-                            Best Flights
-                        </h3>
-                        <p class="text">
-                            Engrossed listening. Park gate sell they west hard for the.
-                        </p>
+                    <div class="service__wrapper">
+                        <div class="services__card">
+                            <img src="./public/images/flights.svg" alt="weather">
+                            <h3 class="card__title">
+                                Best Flights
+                            </h3>
+                            <p class="text">
+                                Engrossed listening. Park gate sell they west hard for the.
+                            </p>
+                        </div>
+                        <div class="card__bow"></div>
                     </div>
-                    <div class="services__card">
-                        <img src="./public/images/events.png" alt="weather">
-                        <h3 class="card__title">
-                            Local Events
-                        </h3>
-                        <p class="text">
-                            Barton vanity itself do in it. Preferd to men it engrossed listening. 
-                        </p>
+                    <div class="service__wrapper">
+                        <div class="services__card">
+                            <img src="./public/images/events.png" alt="weather">
+                            <h3 class="card__title">
+                                Local Events
+                            </h3>
+                            <p class="text">
+                                Barton vanity itself do in it. Preferd to men it engrossed listening. 
+                            </p>
+                        </div>
+                        <div class="card__bow"></div>
                     </div>
-                    <div class="services__card">
-                        <img src="./public/images/customization.svg" alt="weather">
-                        <h3 class="card__title">
-                            Customization
-                        </h3>
-                        <p class="text">
-                            We deliver outsourced aviation services for military customers
-                        </p>
-                    </div>
+                    <div class="service__wrapper">
+                        <div class="services__card">
+                            <img src="./public/images/customization.svg" alt="weather">
+                            <h3 class="card__title">
+                                Customization
+                            </h3>
+                            <p class="text">
+                                We deliver outsourced aviation services for military customers
+                            </p>
+                        </div>
+                        <div class="card__bow"></div>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -140,48 +149,54 @@
                 <div class="destinations__row">
                     <div class="destinations__card">
                         <img src="./public/images/Rome.png" alt="Rome">
-                        <div class="item__info">
-                            <h3 class="item__title">
-                                Rome, Italty
-                            </h3>
-                            <span class="item__value">
-                                $5,42k
+                        <div class="item__wrapper">
+                            <div class="item__info">
+                                <h3 class="item__title">
+                                    Rome, Italty
+                                </h3>
+                                <span class="item__value">
+                                    $5,42k
+                                </span>
+                            </div>
+                            <span class="item__term">
+                                <img src="./public/images/navigation.svg" alt="navigation">
+                                10 Days Trip
                             </span>
                         </div>
-                        <span class="item__term">
-                            <img src="./public/images/navigation.svg" alt="navigation">
-                            10 Days Trip
-                        </span>
                     </div>
                     <div class="destinations__card">
                         <img src="./public/images/London.png" alt="London">
-                        <div class="item__info">
-                            <h3 class="item__title">
-                                London, UK
-                            </h3>
-                            <span class="item__value">
-                                $4.2k
+                        <div class="item__wrapper">
+                            <div class="item__info">
+                                <h3 class="item__title">
+                                    London, UK
+                                </h3>
+                                <span class="item__value">
+                                    $4.2k
+                                </span>
+                            </div>
+                            <span class="item__term">
+                                <img src="./public/images/navigation.svg" alt="navigation">
+                                12 Days Trip
                             </span>
                         </div>
-                        <span class="item__term">
-                            <img src="./public/images/navigation.svg" alt="navigation">
-                            12 Days Trip
-                        </span>
                     </div>
                     <div class="destinations__card">
                         <img src="./public/images/Europe.png" alt="Europe">
-                        <div class="item__info">
-                            <h3 class="item__title">
-                                Full Europe
-                            </h3>
-                            <span class="item__value">
-                                $15k
+                        <div class="item__wrapper">
+                            <div class="item__info">
+                                <h3 class="item__title">
+                                    Full Europe
+                                </h3>
+                                <span class="item__value">
+                                    $15k
+                                </span>
+                            </div>
+                            <span class="item__term">
+                                <img src="./public/images/navigation.svg" alt="navigation">
+                                28 Days Trip
                             </span>
                         </div>
-                        <span class="item__term">
-                            <img src="./public/images/navigation.svg" alt="navigation">
-                            28 Days Trip
-                        </span>
                     </div>
                 </div>
             </div>
@@ -196,54 +211,49 @@
                         Book your next trip in 3 easy steps
                     </h2>
                     <ul class="features__items">
-                        <li>
-                            <div class="feature__container">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="./public/images/features.svg#icon-destination"></use>
-                                </svg>
-                                <div class="feature__text">
-                                    <h3 class="features__item">
-                                        Choose Destination
-                                    </h3>
-                                    <p class="text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
-                                    </p>
-                                </div>
+                        <li class="feature__container">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/features.svg#icon-destination"></use>
+                            </svg>
+                            <div class="feature__text">
+                                <h3 class="features__item">
+                                    Choose Destination
+                                </h3>
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
+                                </p>
                             </div>
                         </li>
-                        <li>
-                            <div class="feature__container">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="./public/images/features.svg#icon-payment"></use>
-                                </svg>
-                                <div class="feature__text">
-                                    <h3 class="features__item">
-                                        Make Payment
-                                    </h3>
-                                    <p class="text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
-                                    </p>
-                                </div>
+                        <li class="feature__container">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/features.svg#icon-payment"></use>
+                            </svg>
+                            <div class="feature__text">
+                                <h3 class="features__item">
+                                    Make Payment
+                                </h3>
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
+                                </p>
                             </div>
                         </li>
-                        <li>
-                            <div class="feature__container">
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="./public/images/features.svg#icon-airport"></use>
-                                </svg>
-                                <div class="feature__text">
-                                    <h3 class="features__item">
-                                        Reach Airport on Selected Date
-                                    </h3>
-                                    <p class="text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
-                                    </p>
-                                </div>
+                        <li class="feature__container">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/features.svg#icon-airport"></use>
+                            </svg>
+                            <div class="feature__text">
+                                <h3 class="features__item">
+                                    Reach Airport on Selected Date
+                                </h3>
+                                <p class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. 
+                                </p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="booking__present">
+                    <img src="./public/images/Ellipse 8.png" alt="decor" class="booking__decor">
                     <div class="tour__block">
                         <img src="./public/images/Greece.png" alt="Greece">
                         <h3 class="tour__title">
@@ -275,10 +285,12 @@
                             </li>
                         </ul>
                         <div class="tour__footer">
-                            <img src="./public/images/tour-counter.svg" alt="Counter">
-                            <span class="tour__counter text">
-                                24 people going
-                            </span>
+                            <div class="tour__footer--counter">
+                                <img src="./public/images/tour-counter.svg" alt="Counter">
+                                <span class="tour__counter text">
+                                    24 people going
+                                </span>
+                            </div>
                             <img src="./public/images/like.svg" alt="Like">
                         </div>
                     </div>
