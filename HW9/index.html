@@ -30,13 +30,13 @@
                     <a href="#">Bookings</a>
                 </li>
                 <li>
-                    <a href="#">Login</a>
+                    <button class="login">Login</button>
                 </li>
                 <li>
                    <div class="header__controls">
-                        <a href="#" class="btn">
+                        <button class="btn">
                             Sign up
-                        </a>
+                        </button>
                         <select name="lang" id="lang">
                             <option value="en" selected>EN</option>
                             <option value="ua">UA</option>
@@ -54,7 +54,12 @@
                         Best Destinations around the world
                     </span>
                     <h1 class="hero__title">
-                        Travel, <span>enjoy</span> and live a new and full life
+                        Travel, 
+                        <span class="hero__underline">
+                            <span>enjoy</span>
+                            <img src="./public/images/hero-title.png" alt="">
+                        </span>
+                        and live a new and full life
                     </h1>
                     <p class="text">
                         Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
@@ -253,7 +258,7 @@
                     </ul>
                 </div>
                 <div class="booking__present">
-                    <img src="./public/images/Ellipse 8.png" alt="decor" class="booking__decor">
+                    <img src="./public/images/Ellipse_8.png" alt="decor" class="booking__decor">
                     <div class="tour__block">
                         <img src="./public/images/Greece.png" alt="Greece">
                         <h3 class="tour__title">
@@ -328,33 +333,28 @@
                 </div>
                 <div class="swiper swiperEffect">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"> 
-                        <div class="card-image"><img src="https://images.pexels.com/photos/3779837/pexels-photo-3779837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-                          <div class="card-description">
-                            <h1>Tokyo</h1>
-                            <p>Japan</p>
-                          </div>
+                        <div class="swiper-slide"> 
+                            <img src="./public/images/client.png" alt="client">
+                            <p class="text client">
+                                “On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”
+                            </p>
+                            <div class="client__info">
+                                <span class="client__name">Mike taylor</span>
+                                <span class="client__location">Lahore, Pakistan</span>
+                            </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="card-image"><img src="https://images.pexels.com/photos/16642632/pexels-photo-16642632/free-photo-of-thanh-ph-binh-minh-hoang-hon-toa-nha-ch-c-tr-i.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-                          <div class="card-description">
-                            <h1>Taipei</h1>
-                            <p>Taiwan</p>
-                          </div>
+                        <div class="swiper-slide"> 
+                            <img src="./public/images/client.png" alt="client">
+                            <p class="text client">
+                                “On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”
+                            </p>
+                            <div class="client__info">
+                                <span class="text client__name">Mike taylor</span>
+                                <span class="text client__location">Lahore, Pakistan</span>
+                            </div>
                         </div>
-                      </div>
-                      <div class="swiper-slide"> 
-                        <div class="card-image"><img src="https://images.pexels.com/photos/12640886/pexels-photo-12640886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-                          <div class="card-description">
-                            <h1>Seoul</h1>
-                            <p>South Korea</p>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -375,7 +375,8 @@
                         Subscribe to get information, latest news and other interesting offers about Cobham
                     </h2>
                     <form class="subscribe__form">
-                        <input type="text" id="email" placeholder="Your email">
+                        <img src="./public/images/email.svg" alt="email">
+                        <input type="text" id="email" placeholder="Your email" autocomplete="email">
                         <button type="submit" class="btn subscribe__btn">Subscribe</button>
                     </form>
                 </div>
@@ -397,26 +398,34 @@
                 </div>
                 <div class="footer__menu"></div>
                 <div class="social">
-                    <div class="social__icons"></div>
+                    <ul class="social__icons">
+                        <li class="social__item">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/social.svg#icon-facebook"></use>
+                            </svg>
+                        </li>
+                        <li class="social__item">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/social.svg#icon-instagram"></use>
+                            </svg>
+                        </li>
+                        <li class="social__item">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="./public/images/social.svg#icon-twitter"></use>
+                            </svg>
+                        </li>
+                    </ul>
                     <div class="social__more">
                         <h2 class="text lg">
                             Discover our app
                         </h2>
                         <div class="more__row">
-                            <button type="button" class="btn more__btn">
-                                <img src="./public/images/google-play.svg" alt="GooglePlay">
-                                <span class="btn__text">
-                                    <span class="btn__text--bold">Get it on</span>
-                                    <span class="btn__text--light">Google Play</span>
-                                </span>
-                            </button>
-                            <button type="button" class="btn more__btn">
-                                <img src="./public/images/google-play.svg" alt="GooglePlay">
-                                <span class="btn__text">
-                                    <span class="btn__text--light">Availible on the</span>
-                                    <span class="btn__text--bold">Apple store</span>    
-                                </span>
-                            </button>
+                            <a href="#" class="more__btn">
+                                <img src="./public/images/Google_Play.png" alt="GooglePlay">
+                            </a>
+                            <a href="#" class="more__btn">
+                                <img src="./public/images/Play_Store.svg" alt="PlayStore">
+                            </a>
                         </div>
                     </div>
                 </div>
