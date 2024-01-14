@@ -1,0 +1,101 @@
+.footer {
+    padding: 186px 0 100px;
+    background: #F8F8F8;
+  
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        justify-content: space-between;
+  
+        img {
+          max-width: 149px;
+        }
+  
+        .text {
+          margin-top: 10px;
+          max-width: 340px;
+  
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+
+      .footer__menu {
+        display: flex;
+        gap: 120px;
+  
+        .menu__list {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+  
+          h2 {
+            font-size: 18px;
+            color: var(--title);
+            font-weight: 500;
+            line-height: 30px;
+          }
+  
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+  
+            li a {
+              font-size: 16px;
+              color: var(--text);
+              font-weight: 400;
+              line-height: 30px;
+              cursor: pointer;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+  
+      .social {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+  
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 12px;
+          border-radius: 50%;
+          transition: all 0.3s;
+          cursor: pointer;
+          box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+          &:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 55px 10px rgb(0 0 0 / 0.1);
+          }
+  
+          .icon {
+            width: 24px;
+            height: 24px;
+            fill: $accent;
+          }
+        }
+      }
+  
+      &__info .text:last-child {
+        opacity: 0.3;
+      }
+    }
+  }
+  

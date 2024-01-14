@@ -1,0 +1,15 @@
+/* Main */
+@import "./globals.scss";
+@import "./components/header";
+@import "./components/footer";
+/* Sections */
+@import "./sections/hero";
+@import "./sections/features";
+@import "./sections/about";
+@import "./sections/pricing";
+@import "./sections/network";
+@import "./sections/clients";
+@import "./sections/testimonials";
+@import "./sections/subscribe";
+/* Buttons */
+@import "./components/btns";

@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaslesVPN</title>
-    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/swiper.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./assets/js/swiper.js"></script>
-    <script defer src="./assets/js/menu.js"></script>
+    <script defer src="./assets/js/menu.js"></script>   
+    <script defer src="./assets/js/animation.js"></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header animate__animated animate__fadeInDown">
         <nav class="wrapper">
             <a href="#">
                 <img src="./public/images/Logo.svg" alt="logo">
@@ -30,19 +32,19 @@
                 <button type="button" class="btn signUp">Sign Up</button>
             </div>
         </nav>
-    </header>    
-    <main>
+    </header>
+    <main class="content">
         <section class="hero">
             <div class="wrapper header__wrapper">
-                <div class="hero__content">
+                <div class="hero__content animate__animated animate__fadeInLeft">
                     <h1>Want anything to be easy with <span>LaslesVPN.</span></h1>
                     <p>Provide a network for all your needs with ease and fun using <span>LaslesVPN</span> discover interesting features from us.</p>
                     <button type="button" class="btn cto subscribe">Get Started</button>
                 </div>
-                <img src="./public/images/Illustration_1.png" alt="illustration"> <!-- 79,6kb - 19kb -->
+                <img class="animate__animated animate__fadeIn" src="./public/images/Illustration_1.png" alt="illustration"> <!-- 79,6kb - 19kb -->
             </div>
         </section>
-        <section class="features">
+        <section class="animate__animated animate__fadeInUp animate__slow features">
             <div class="wrapper features__container">
                 <ul>
                     <li class="features__item">
