@@ -1,0 +1,25 @@
+.subscribe__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 58.8px 70px;
+    box-shadow: 0 10px 50px rgba(13, 16, 37, 0.06);
+    border-radius: 10px;
+    position: relative;
+    top: 120px;
+    z-index: 5;
+    background: $white;
+  
+    .subscribe__content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      .title {
+        max-width: 371px;
+      }
+    }
+  }
+  
