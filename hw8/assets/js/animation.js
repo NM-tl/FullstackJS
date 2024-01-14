@@ -1,17 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const about = document.querySelector('.about__wrapper');
-    const aboutWrapperImg = document.querySelector('.about__wrapper img');
-    const aboutContent = document.querySelector('.about__content');
-    const pricing = document.querySelector('.pricing__wrapper');
-    const pricingContent = document.querySelector('.pricing__content');
-    const cards = document.querySelector('.cards__wrapper');
-    const network = document.querySelector('.network__wrapper');
-    const networkTitle = document.querySelector('.network__content .title');
-    const networkText = document.querySelector('.network__content .text');
-    const map = document.querySelector('.network__wrapper img');
-    const sub = document.querySelector('.subscribe__wrapper');
-    
-    const clientsItems =  document.querySelectorAll('.clients__wrapper ul li');
+    const sectionsToAnimate = [
+        {
+            section: document.querySelector('.about__wrapper'),
+            elements: [
+                document.querySelector('.about__wrapper img'),
+                document.querySelector('.about__content')
+            ],
+            animations: ['animate__fadeInLeft', 'animate__fadeInRight']
+        },
+        {
+            section: document.querySelector('.pricing__wrapper'),
+            elements: [
+                document.querySelector('.pricing__content'),
+                document.querySelector('.cards__wrapper')
+            ],
+            animations: ['animate__fadeInUp', 'animate__fadeInUp animate__delay-1s']
+        },
+        {
+            section: document.querySelector('.network__wrapper'),
+            elements: [
+                document.querySelector('.network__content .title'),
+                document.querySelector('.network__content .text'),
+                document.querySelector('.network__wrapper img')
+            ],
+            animations: ['animate__fadeInUp', 'animate__fadeInUp animate__delay-1s', 'animate__zoomIn animate__delay-2s']
+        },
+        {
+            section: document.querySelector('.subscribe__wrapper'),
+            elements: [
+                document.querySelector('.subscribe__wrapper')
+            ],
+            animations: ['animate__fadeInUp animate__delay-2s']
+        }
+    ];
+
+    const clientsItems = document.querySelectorAll('.clients__wrapper ul li');
 
     const options = {
         root: null,
@@ -25,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 clientsItems.forEach((client, index) => {
                     const delay = 200 * index;
                     setTimeout(() => {
-                        client.classList.add('show','animate__animated', 'animate__zoomIn');
+                        client.classList.add('show', 'animate__animated', 'animate__zoomIn');
                     }, delay);
                 });
                 observer.unobserve(entry.target);
@@ -35,26 +58,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(document.querySelector('.clients__wrapper ul'));
 
-    const aboutObserver = new IntersectionObserver((entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                about.classList.add('visible')
-                aboutWrapperImg.classList.add('animate__animated', 'animate__fadeInLeft');
-                aboutContent.classList.add('animate__animated', 'animate__fadeInRight');
-
-                pricing.classList.add('visible')
-                pricingContent.classList.add('animate__animated', 'animate__fadeInUp');
-                cards.classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-1s');
-
-                network.classList.add('visible')
-                networkTitle.classList.add('animate__animated', 'animate__fadeInUp');
-                networkText.classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-1s');
-                map.classList.add('animate__animated', 'animate__zoomIn', 'animate__delay-2s');
-
-                sub.classList.add('animate__animated', 'animate__fadeInUp', 'animate__delay-2s')
+                sectionsToAnimate.forEach(sectionData => {
+                    if (entry.target.classList.contains(sectionData.section.classList[0])) {
+                        sectionData.section.classList.add('visible');
+                        sectionData.elements.forEach((element, index) => {
+                            element.classList.add('animate__animated', ...sectionData.animations[index].split(' '));
+                        });
+                    }
+                });
             }
         });
     }, options);
 
-    aboutObserver.observe(document.querySelector('.about'));
+    sectionsToAnimate.forEach(sectionData => {
+        sectionObserver.observe(sectionData.section);
+    });
 });
