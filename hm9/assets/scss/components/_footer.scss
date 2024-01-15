@@ -1,0 +1,140 @@
+.footer {
+    margin-top: 96px;
+    padding-bottom: 80px;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+    align-items: center;
+}
+
+.footer__row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__company {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__logo {
+    font-size: 44px;
+    font-weight: 500;
+    color: $hero-title;
+}
+
+.text.sm {
+    font-size: 13px;
+    max-width: 207px;
+}
+
+.footer__menu {
+    display: flex;
+    align-items: center;
+    gap: 74px;
+}
+
+.menu__list h2{
+    margin-bottom: 34px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.menu__list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu__list ul li a {
+    font-size: 18px;
+    color: $text;
+    font-weight: 500;
+    line-height: 124.5%;
+    transition: scale 0.4s;
+}
+
+.menu__list ul li:hover {
+    text-decoration: underline;
+    transform: scale(1.03);
+}
+
+.social__icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 26px;
+}
+
+.social__item {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.social__item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 
+                0 4px 6px -4px rgb(0 0 0 / 0.2);
+    background: radial-gradient(circle, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+    background-size: 200% 200%;
+    background-position: center center;
+    animation: gradient 3s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.social__item svg {
+    width: 18px;
+    height: 18px;
+}
+
+.text.lg {
+    font-size: 20px;
+    color: $text;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+.more__row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.more__btn {
+    min-width: 107px;
+    transition: transform 0.4s;
+}
+
+.more__btn:hover {
+    transform: scale(1.05);
+}
+
+.rights {
+    color: $text;
+    font-size: 14px;
+    font-weight: 500;
+}

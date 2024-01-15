@@ -1,0 +1,89 @@
+.services__wrapper {
+    margin: 97px 0 0;
+    padding-bottom: 123px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &__decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__grid {
+        margin-top: 108px;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+
+        &:hover .services__card {
+            z-index: 40;
+            border-radius: 36px;
+            box-shadow: 0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.00), 
+                        0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01), 
+                        0px 20px 13px 0px rgba(0, 0, 0, 0.01), 
+                        0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01), 
+                        0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02), 
+                        0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+        }
+
+        &:hover .card__bow {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-35px, 35px);
+            z-index: 30;
+        }
+
+        &:last-child .services__card img {
+            margin: -40px;
+        }
+    }
+
+    &__card {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        cursor: pointer;
+        padding: 24px 75px 40px;
+        transition: all 0.4s;
+        position: relative;
+        z-index: 20;
+        background-color: white;
+        transition: all 0.35s;
+        min-height: 314px;
+
+        &__bow {
+            border-radius: 30px 0px 10px 0px;
+            background: $accent;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+            opacity: 0; 
+            visibility: hidden; 
+            transition: transform 0.4s, opacity 0.4s, visibility 0.4s;
+        }
+    }
+
+    .card__title {
+        margin-top: 34px;
+        font-size: 20px;
+        font-weight: 600;
+        color: $title;
+    }
+
+    .services__card .text {
+        max-width: 181px;
+    }
+}

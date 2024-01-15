@@ -1,0 +1,85 @@
+.hero__wrapper {
+    display: flex;
+    padding-top: 27px;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .text {
+            margin: 6px 0 10px;
+        }
+    }
+
+    &__underline {
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 15px;
+            left: -15%;
+            z-index: 10;
+        }
+
+        span {
+            position: relative;
+            z-index: 20;
+        }
+    }
+
+    &__accent {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-family: 'Volkhov';
+        color: $hero-title;
+        font-size: 84px;
+        font-weight: 700;
+        line-height: 89px;
+        letter-spacing: -3.36px;
+        max-width: 545px;
+    }
+
+    &__cto {
+        display: flex;
+        align-items: center;
+        gap: 44px;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__illustartions {
+        position: relative;
+
+        img:nth-child(-n+2) {
+            position: relative;
+            z-index: 20;
+        }
+
+        img:nth-child(2) {
+            position: absolute;
+            z-index: 30;
+            left: 15%;
+            top: 50%;
+            animation: firstPlane 3s linear infinite;
+        }
+
+        img:nth-child(3) {
+            position: absolute;
+            z-index: 10;
+            top: 15%;
+            left: 75%;
+            animation: secondPlane 2s linear infinite;
+        }
+    }
+}
