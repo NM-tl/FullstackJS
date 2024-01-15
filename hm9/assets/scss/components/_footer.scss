@@ -96,15 +96,6 @@
     animation-direction: alternate;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
 .social__item svg {
     width: 18px;
     height: 18px;

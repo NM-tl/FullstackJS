@@ -3,7 +3,7 @@
     padding-top: 27px;
     align-items: center;
 
-    &__content {
+    .hero__content {
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -13,7 +13,7 @@
         }
     }
 
-    &__underline {
+    .hero__underline {
         position: relative;
 
         img {
@@ -29,14 +29,14 @@
         }
     }
 
-    &__accent {
+    .hero__accent {
         font-size: 20px;
         font-weight: 700;
-        color: var(--accent);
+        color: $accent;
         text-transform: uppercase;
     }
 
-    &__title {
+    .hero__title {
         font-family: 'Volkhov';
         color: $hero-title;
         font-size: 84px;
@@ -46,19 +46,19 @@
         max-width: 545px;
     }
 
-    &__cto {
+    .hero__cto {
         display: flex;
         align-items: center;
         gap: 44px;
     }
 
-    &__bg {
+    .hero__bg {
         position: absolute;
         top: 0;
         right: 0;
     }
 
-    &__illustartions {
+    .hero__illustartions {
         position: relative;
 
         img:nth-child(-n+2) {

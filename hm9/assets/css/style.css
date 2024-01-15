@@ -215,14 +215,6 @@ h1, h2, h3, p, ul, li, a {
   animation-direction: alternate;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
 .social__item svg {
   width: 18px;
   height: 18px;
@@ -257,40 +249,102 @@ h1, h2, h3, p, ul, li, a {
   font-weight: 500;
 }
 
+.btn {
+  padding: 9px 22px;
+  color: #212832;
+  font-size: 17px;
+  font-weight: 400;
+  border: 1px solid #212832;
+  border-radius: 5px;
+  background: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.header__controls .btn:hover {
+  background: #DF6951;
+  border-color: #DF6951;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn__hero {
+  background: #F1A501;
+  box-shadow: 0px 20px 35px 0px rgba(241, 165, 1, 0.15);
+  border: none;
+  padding: 18px 28px;
+  color: #fff;
+}
+.btn__hero:hover {
+  transform: scale(0.9);
+  box-shadow: 0px 20px 35px 0px rgba(241, 165, 1, 0.55);
+}
+
+.btn__demo {
+  display: flex;
+  align-items: center;
+  color: #686D77;
+  font-size: 17px;
+  font-weight: 500;
+  gap: 21px;
+  transition: all 0.45s;
+}
+.btn__demo:hover {
+  transform: scale(1.05);
+}
+.btn__demo img {
+  margin: -18px -30px -46px;
+  transition: transform 0.5s;
+}
+.btn__demo:hover img {
+  transform: translateX(10px);
+}
+
+.login {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: #14183E;
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
 /* Sections */
 .hero__wrapper {
   display: flex;
   padding-top: 27px;
   align-items: center;
 }
-.hero__wrapper__content {
+.hero__wrapper .hero__content {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.hero__wrapper__content .text {
+.hero__wrapper .hero__content .text {
   margin: 6px 0 10px;
 }
-.hero__wrapper__underline {
+.hero__wrapper .hero__underline {
   position: relative;
 }
-.hero__wrapper__underline img {
+.hero__wrapper .hero__underline img {
   position: absolute;
   bottom: 15px;
   left: -15%;
   z-index: 10;
 }
-.hero__wrapper__underline span {
+.hero__wrapper .hero__underline span {
   position: relative;
   z-index: 20;
 }
-.hero__wrapper__accent {
+.hero__wrapper .hero__accent {
   font-size: 20px;
   font-weight: 700;
-  color: var(--accent);
+  color: #DF6951;
   text-transform: uppercase;
 }
-.hero__wrapper__title {
+.hero__wrapper .hero__title {
   font-family: "Volkhov";
   color: #181E4B;
   font-size: 84px;
@@ -299,31 +353,31 @@ h1, h2, h3, p, ul, li, a {
   letter-spacing: -3.36px;
   max-width: 545px;
 }
-.hero__wrapper__cto {
+.hero__wrapper .hero__cto {
   display: flex;
   align-items: center;
   gap: 44px;
 }
-.hero__wrapper__bg {
+.hero__wrapper .hero__bg {
   position: absolute;
   top: 0;
   right: 0;
 }
-.hero__wrapper__illustartions {
+.hero__wrapper .hero__illustartions {
   position: relative;
 }
-.hero__wrapper__illustartions img:nth-child(-n+2) {
+.hero__wrapper .hero__illustartions img:nth-child(-n+2) {
   position: relative;
   z-index: 20;
 }
-.hero__wrapper__illustartions img:nth-child(2) {
+.hero__wrapper .hero__illustartions img:nth-child(2) {
   position: absolute;
   z-index: 30;
   left: 15%;
   top: 50%;
   animation: firstPlane 3s linear infinite;
 }
-.hero__wrapper__illustartions img:nth-child(3) {
+.hero__wrapper .hero__illustartions img:nth-child(3) {
   position: absolute;
   z-index: 10;
   top: 15%;
@@ -339,36 +393,36 @@ h1, h2, h3, p, ul, li, a {
   align-items: center;
   position: relative;
 }
-.services__wrapper__decoration {
+.services__wrapper .service__decoration {
   position: absolute;
   top: 0;
   right: 0;
 }
-.services__wrapper__grid {
+.services__wrapper .services__grid {
   margin-top: 108px;
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(4, 1fr);
 }
-.services__wrapper__wrapper {
+.services__wrapper .service__wrapper {
   position: relative;
   z-index: 10;
 }
-.services__wrapper__wrapper:hover .services__card {
+.services__wrapper .service__wrapper:hover .services__card {
   z-index: 40;
   border-radius: 36px;
   box-shadow: 0px 1.852px 3.148px 0px rgba(0, 0, 0, 0), 0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01), 0px 20px 13px 0px rgba(0, 0, 0, 0.01), 0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01), 0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02), 0px 100px 80px 0px rgba(0, 0, 0, 0.02);
 }
-.services__wrapper__wrapper:hover .card__bow {
+.services__wrapper .service__wrapper:hover .card__bow {
   opacity: 1;
   visibility: visible;
   transform: translate(-35px, 35px);
   z-index: 30;
 }
-.services__wrapper__wrapper:last-child .services__card img {
+.services__wrapper .service__wrapper:last-child .services__card img {
   margin: -40px;
 }
-.services__wrapper__card {
+.services__wrapper .services__card {
   text-align: center;
   display: flex;
   align-items: center;
@@ -383,7 +437,7 @@ h1, h2, h3, p, ul, li, a {
   transition: all 0.35s;
   min-height: 314px;
 }
-.services__wrapper__card__bow {
+.services__wrapper .card__bow {
   border-radius: 30px 0px 10px 0px;
   background: #DF6951;
   width: 100px;
@@ -411,20 +465,20 @@ h1, h2, h3, p, ul, li, a {
   flex-direction: column;
   align-items: center;
 }
-.destinations__wrapper__row {
+.destinations__wrapper .destinations__row {
   margin-top: 60px;
   display: flex;
   width: 100%;
   justify-content: center;
 }
-.destinations__wrapper__card {
+.destinations__wrapper .destinations__card {
   position: relative;
 }
-.destinations__wrapper__card:first-child {
+.destinations__wrapper .destinations__card:first-child {
   position: relative;
   left: 8%;
 }
-.destinations__wrapper__card:last-child {
+.destinations__wrapper .destinations__card:last-child {
   position: relative;
   right: 8%;
   background-image: url("../../public/images/Decore.svg");
@@ -469,47 +523,47 @@ h1, h2, h3, p, ul, li, a {
   justify-content: space-between;
   padding-bottom: 208px;
 }
-.booking__wrapper__features {
+.booking__wrapper .booking__features {
   display: flex;
   flex-direction: column;
 }
-.booking__wrapper__features .title {
+.booking__wrapper .booking__features .title {
   max-width: 511px;
 }
-.booking__wrapper__features__items {
+.booking__wrapper .booking__features .features__items {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
-.booking__wrapper__features__items li.feature__container {
+.booking__wrapper .booking__features .features__items li.feature__container {
   display: flex;
   gap: 21px;
   align-items: center;
 }
-.booking__wrapper__features__items li.feature__container svg {
+.booking__wrapper .booking__features .features__items li.feature__container svg {
   width: 48px;
   height: 48px;
 }
-.booking__wrapper__features__items li.feature__container .feature__text {
+.booking__wrapper .booking__features .features__items li.feature__container .feature__text {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.booking__wrapper__features__items li.feature__container .feature__text__item {
+.booking__wrapper .booking__features .features__items li.feature__container .feature__text__item {
   font-size: 16px;
-  color: var(--text);
+  color: #5E6282;
   font-weight: 700;
 }
-.booking__wrapper__features__items li.feature__container .feature__text__item .text {
+.booking__wrapper .booking__features .features__items li.feature__container .feature__text__item .text {
   font-weight: 400;
   max-width: 327px;
 }
-.booking__wrapper__present {
+.booking__wrapper .booking__present {
   position: relative;
   right: 5%;
 }
-.booking__wrapper__decor {
+.booking__wrapper .booking__decor {
   position: absolute;
   opacity: 0.8;
   filter: blur(75px);
@@ -519,7 +573,7 @@ h1, h2, h3, p, ul, li, a {
 }
 
 .tour__block {
-  background-color: var(--white);
+  background-color: #fff;
   padding: 20px 25px 31px;
   display: flex;
   flex-direction: column;
@@ -529,33 +583,33 @@ h1, h2, h3, p, ul, li, a {
   position: relative;
   z-index: 20;
 }
-.tour__block__title {
+.tour__block .tour__title {
   margin: 26px 0 13px;
   font-size: 18px;
-  color: var(--title);
+  color: #14183E;
   font-weight: 500;
   line-height: 124.5%;
   letter-spacing: 0.27px;
 }
-.tour__block__info {
+.tour__block .tour__info {
   display: flex;
   align-items: center;
   gap: 13px;
   margin-bottom: 21px;
 }
-.tour__block__info span:first-child {
+.tour__block .tour__info span:first-child {
   padding-right: 3px;
   border-right: 1px solid #84829A;
   display: flex;
   align-items: center;
 }
-.tour__block__icons {
+.tour__block .tour__icons {
   display: flex;
   align-items: center;
   gap: 13px;
   margin-bottom: 30px;
 }
-.tour__block__icons .circle {
+.tour__block .tour__icons .circle {
   padding: 10px;
   border-radius: 50%;
   background-color: #F5F5F5;
@@ -565,15 +619,15 @@ h1, h2, h3, p, ul, li, a {
   width: 36px;
   height: 36px;
 }
-.tour__block__icons .circle svg {
+.tour__block .tour__icons .circle svg {
   max-width: 18px;
 }
-.tour__block__footer {
+.tour__block .tour__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.tour__block__footer--counter {
+.tour__block .tour__footer .tour__footer--counter {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -585,7 +639,7 @@ h1, h2, h3, p, ul, li, a {
   padding: 16px 25px 22px 16px;
   display: flex;
   gap: 12px;
-  background: white;
+  background: #fff;
   position: absolute;
   right: -45%;
   top: 50%;
@@ -608,7 +662,7 @@ h1, h2, h3, p, ul, li, a {
   line-height: 124.5%;
   letter-spacing: -0.49px;
 }
-.popup__content__title {
+.popup__content .tour__title {
   color: #14183E;
   font-size: 18px;
   font-weight: 500;
