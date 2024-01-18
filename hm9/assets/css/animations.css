@@ -1,0 +1,38 @@
+@keyframes firstPlane {
+    0% {
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translate(700%, -300%);   
+    }
+}
+
+@keyframes secondPlane {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translate(300%, -100%);   
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}

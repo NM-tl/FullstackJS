@@ -1,0 +1,206 @@
+.booking__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 208px;
+
+    .booking__features {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            max-width: 511px;
+        }
+
+        .features__items  {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+
+            li.feature__container {
+                display: flex;
+                gap: 21px;
+                align-items: center;
+
+                svg {
+                    width: 48px;
+                    height: 48px;
+                }
+
+                .feature__text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    &__item {
+                        font-size: 16px;
+                        color: $text;
+                        font-weight: 700;
+
+                        .text {
+                            font-weight: 400;
+                            max-width: 327px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .booking__present {
+        position: relative;
+        right: 5%;
+    }
+
+    .booking__decor {
+        position: absolute;
+        opacity: 0.8;
+        filter: blur(75px);
+        top: -5%;
+        left: 50%;
+        max-width: 354px;
+    }
+}
+
+.tour__block {
+    background-color: $white;
+    padding: 20px 25px 31px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 26px;
+    box-shadow: 0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.00), 
+                0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01), 
+                0px 20px 13px 0px rgba(0, 0, 0, 0.01), 
+                0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01), 
+                0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02), 
+                0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s;
+    position: relative;
+    z-index: 20;
+
+    .tour__title {
+        margin: 26px 0 13px;
+        font-size: 18px;
+        color: $title;
+        font-weight: 500;
+        line-height: 124.5%;
+        letter-spacing: 0.27px;
+    }
+
+    .tour__info {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-bottom: 21px;
+
+        span:first-child {
+            padding-right: 3px;
+            border-right: 1px solid #84829A;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .tour__icons {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-bottom: 30px;
+
+        .circle {
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #F5F5F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+
+            svg {
+                max-width: 18px;
+            }
+        }
+    }
+
+    .tour__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .tour__footer--counter {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+}
+
+.popup {
+    border-radius: 18px;
+    box-shadow: 0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.00), 
+                0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01), 
+                0px 20px 13px 0px rgba(0, 0, 0, 0.01), 
+                0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01), 
+                0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02), 
+                0px 100px 80px 0px rgba(0, 0, 0, 0.02);
+    padding: 16px 25px 22px 16px;
+    display: flex;
+    gap: 12px;
+    background: $white;
+    position: absolute;
+    right: -45%;
+    top: 50%;
+    z-index: 30;
+    min-width: 263px;
+
+    img {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .text .popup__text {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 124.5%; 
+            letter-spacing: -0.49px;
+        }
+
+        .tour__title {
+            color: $title;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 124.5%; 
+            letter-spacing: -0.27px;
+            margin: 6px 0 14px;
+        }
+    }
+
+    .progress__value {
+        margin: 8px 0 4px;
+    }
+
+    .progress__bar {
+        width: 100%;
+        height: 5px;
+        border-radius: 10px;
+        background-color: #F5F5F5;
+
+        &::-webkit-progress-bar {
+            background-color: #F5F5F5;
+            border-radius: 10px;
+        }
+
+        &::-webkit-progress-value {
+            background-color: #8A79DF;
+            border-radius: 10px;
+        }
+    }
+}
