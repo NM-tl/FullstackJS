@@ -1,0 +1,18 @@
+.partners__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: multiply;
+    margin: 96px 0 124px;
+
+    img {
+        filter: grayscale(100%);
+        transition: filter 0.4s, transform 0.4s, cursor 0.4s;
+        cursor: url('https://s.electerious.com/images/codepen/cursor.svg') 10 10, auto;
+
+        &:hover {
+            filter: brightness(1) drop-shadow(0 0 10px rgba(223,105,81, 0.5));
+            transform: scale(1.05);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap');
+@import './variables';
+
+body {
+    font-family: $font-family-main;
+    margin: 0;
+}
+
+h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.title {
+    font-family: 'Volkhov';
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: $title;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: $text;
+    margin-bottom: 10px;
+} 
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text {
+    color: $text;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.header,
+.hero, 
+.services, 
+.destinations, 
+.booking,
+.testimonials,
+.partners,
+.subscribe,
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: $wrapper;
+}
