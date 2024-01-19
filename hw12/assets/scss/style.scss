@@ -1,0 +1,57 @@
+@import './variables';
+
+.board {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    width: fit-content;
+    border: $border-w;
+
+    .cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top, .bottom {
+        grid-column: 1 / -1; 
+        display: flex;
+        justify-content: center;
+    }
+    
+    .left, .right {
+        grid-row: 2 / -2; 
+    }
+
+    .top .cell, .bottom .cell {
+        width: $cell-big;
+        height: $cell-min;
+    } 
+    
+    .left .cell, .right .cell {
+        width: $cell-min;
+        height: $cell-big;
+    }
+    
+    .field {
+        border: $border-w;
+        width: 410px;
+        display: grid;
+        grid-column: 2; 
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .white {
+        height: $cell-big;
+        width: $cell-big;
+        background-color: black;
+    }
+    
+    .black {
+        height: $cell-big;
+        width: $cell-big;
+        background-color: white;
+    }
+}
