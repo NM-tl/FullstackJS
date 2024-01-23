@@ -1,0 +1,18 @@
+@keyframes scrollAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(16px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
