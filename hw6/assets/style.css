@@ -19,6 +19,8 @@ body {
 }
 
 section, header, footer {
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -33,10 +35,11 @@ footer {
 }
 
 .navigation, .wrapper {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    /* display: block; */
     width: 100%;
     max-width: 1120px;
-    margin: 0 auto;
 }
 
 .container {
@@ -52,9 +55,14 @@ footer {
     position: relative;
 }
 
-.navigation > * {
+.navigation > *:not(svg) {
     position: absolute;
     bottom: 0;
+}
+
+.navigation.sticky > svg,
+.navigation svg  {
+    display: none;
 }
 
 .navigation.sticky {
@@ -225,6 +233,11 @@ footer {
     padding-bottom: 100px;
 }
 
+.process .wrapper {
+    flex-direction: column;
+    gap: 12px;
+}
+
 .process-content {
     width: 100%;
     margin: 0 auto;
@@ -235,6 +248,7 @@ footer {
 /* Contacts css */
 
 .contacts {
+    display: block;
     padding: 50px 0;
     margin: 0 auto;
     color: white;
@@ -251,4 +265,99 @@ footer {
     margin-top: 20px;
     font-size: 13px;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 1919px) {
+    .wrapper {
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .navigation, .wrapper {
+        justify-content: center;
+    }
+
+    .navigation.sticky ul {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        left: unset;
+        transform: unset;
+        margin: unset;
+    }
+
+    .container.row {
+        white-space: unset;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .about-content, .process-content {
+        margin: unset;
+    }
+
+    .works .row > *:last-child {
+        margin-right: auto;
+    }
+
+    .container.row .item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .contacts {
+        text-align: center;
+        padding: 24px 0;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .navigation {
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .navigation svg,
+    .navigation.sticky > svg {
+        display: flex;
+    }
+
+    .navigation ul,
+    .navigation.sticky > ul {
+        display: none;
+    }
+
+    .intro-content {
+        padding: 80px 0;
+    }
+
+    .container.row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .works .row > *,
+    .works .row > *:last-child {
+        margin-right: 0 ;
+    }
+
+    .container.row .item {
+        align-items: center;
+    }
+
+    iframe {
+        height: 350px;
+    }
 }
