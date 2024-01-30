@@ -1,0 +1,113 @@
+/* Main parts */
+/* Sections */
+.hero__container {
+  padding-top: 80px;
+  height: 900px;
+  background: linear-gradient(90deg, #96E9FB 0%, #ABECD6 100%);
+}
+
+.clients__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 60px;
+}
+@media screen and (min-width: 600px) {
+  .clients__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients__grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.categories__grid.card {
+  padding: 20px;
+  text-align: center;
+}
+.categories__grid.card:nth-child(1) {
+  grid-row: span 2;
+}
+.categories__grid.card:nth-child(2), .categories__grid.card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 30px;
+}
+@media screen and (min-width: 786px) {
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products__grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about__container:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.posts__container {
+  display: flex;
+  flex-direction: column;
+}
+.posts__container.content {
+  display: flex;
+  flex-direction: column;
+}
+.posts .posts__row {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+.posts {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__container.content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .posts__row {
+        display: flex;
+        flex-direction: column;
+    }
+}
