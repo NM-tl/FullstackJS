@@ -267,7 +267,7 @@ footer {
     font-weight: 400;
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1919px) {
     .wrapper {
         align-items: center;
         padding: 0 16px;
