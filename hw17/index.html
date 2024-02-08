@@ -110,17 +110,169 @@
         </nav>
     </header>
     <main>
-        <div class="w-full m-auto max-w-6xl flex justify-between">
-            <h2 class="text-2xl text-main font-semibold">
-                Shop
-            </h2>
-            <div class="flex items-center gap-2">
-                <h3 class="text-sm font-semibold">Home</h3>
-                <span>></span>
-                <h3 class="text-sm font-semibold">Shop</h3>
+        <div class="w-full m-auto max-w-5xl my-8 flex flex-col gap-6">
+            <div class="w-full flex justify-between ">
+                <h2 class="text-2xl text-main font-semibold">
+                    Shop
+                </h2>
+                <div class="flex items-center gap-2">
+                    <h3 class="text-sm font-semibold">Home</h3>
+                    <span>></span>
+                    <h3 class="text-sm font-semibold">Shop</h3>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 text-white justify-center">
+                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
+                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
+                    <span class="text-sm">5 items</span>
+                </div>
+                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
+                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
+                    <span class="text-sm">5 items</span>
+                </div>
+                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
+                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
+                    <span class="text-sm">5 items</span>
+                </div>
+                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
+                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
+                    <span class="text-sm">5 items</span>
+                </div>
             </div>
         </div>
+        <div class="flex justify-between w-full max-w-5xl m-auto">
+            <span class="text-secondary font-semibold text-sm">
+                Showing all 12 results
+            </span>
+            <div class="flex items-center gap-2">
+                <span class="text-secondary font-semibold text-sm">
+                    Views: 
+                </span>
+                <span>1</span>
+                <span>1</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button 
+                    type="button"
+                    class="text-sm text-secondary border border-secondary py-3 px-5"
+                >
+                    Popularity
+                </button>
+                <button 
+                    type="button"
+                    class="text-sm text-white border border-accent py-3 px-5 bg-accent"
+                >
+                    Filter
+                </button>
+            </div>
+        </div> 
+        <div class="w-full m-auto max-w-7xl">
+            <div class="w-full py-12 px-9 grid grid-cols-4 m-auto">
+                <div class="w-full max-w-60 h-fit flex flex-col gap-6">
+                    <img 
+                        src="" 
+                        alt="product"
+                        class="h-full max-h-72 w-full"
+                    />
+                    <div class="flex flex-col gap-2">
+                        <h5 class="text-base font-semibold text-main">Graphic Design</h5>
+                        <span class="text-secondary text-sm font-semibold">English Department</span>
+                        <div class="flex items-center gap-1">
+                            <span class="font-semibold text-muted">$16.48</span>
+                            <span class="font-semibold text-accent">$6.48</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="inline-flex items-center rounded-full bg-sky-500 px-2 py-2"></span>
+                            <span class="inline-flex items-center rounded-full bg-green-800 px-2 py-2"></span>
+                            <span class="inline-flex items-center rounded-full bg-orange-500 px-2 py-2"></span>
+                            <span class="inline-flex items-center rounded-full bg-green-800 px-2 py-2"></span>
+                        </div>
+                    </div>
+                </div>
+                <div>1</div>
+                <div>1</div>
+                <div>1</div>
+            </div> 
+            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+                <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                  <span class="sr-only">Previous</span>
+                  First
+                </a>
+                <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                  <span class="sr-only">Next</span>
+                  Next
+                </a>
+            </nav>           
+        </div>
+        <div class="w-full m-auto max-w-7xl flex gap-8 items-center my-12">
+            <img src="" alt="img">
+            <img src="" alt="img">
+            <img src="" alt="img">
+            <img src="" alt="img">
+            <img src="" alt="img">
+            <img src="" alt="img">
+        </div>
     </main>
-    <footer></footer>
+    <footer class="w-full m-auto max-w-7xl flex flex-col gap-8">
+        <div class="w-full flex items-center justify-between">
+            <h2 class="text-main text-2xl font-semibold">Bandage</h2>
+            <div class="flex items-center gap-3">
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+            </div>
+        </div>
+        <div class="flex flex-col gap-6 w-full">
+            <div class="flex items-start justify-between">
+                <div class="flex flex-col gap-3">
+                    <span>title</span>
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span>title</span>
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span>title</span>
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span>title</span>
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span>title</span>
+                    <input 
+                        type="text"
+                        class="input"
+                    >
+                </div>
+            </div>
+            <span class="text-secondary text-sm font-semibold">Made With Love By Finland All Right Reserved</span>
+        </div>
+    </footer>
 </body>
 </html>
