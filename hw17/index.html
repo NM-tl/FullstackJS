@@ -20,24 +20,34 @@
                     secondary: '#737373',
                     muted: '#BDBDBD',
                     accent: '#23A6F0',
+                },
+                maxWidth: {
+                    'containerM': '1050px',
+                    'containerL': '1120px',
                 }
             }
           }
         }
     </script>
-    <script src="./assets/renderCards.js" type="module"></script>
+    <script defer src="./assets/renderCards.js" type="module"></script>
+    <script defer src="./assets/renderCategories.js" type="module"></script>
+    <script defer src="./assets/renderPartners.js" type="module"></script>
 </head>
 <body> 
     <header>
-        <div class="w-full bg-banner pt-6 pb-4 text-white">
-            <div class="w-full flex justify-between max-w-6xl m-auto">
-                <div class="flex gap-2">
-                    <a href="#" class="flex gap-1">
-                        icon
+        <div class="w-full bg-banner pt-6 pb-4 text-white hidden lg:block">
+            <div class="w-full flex justify-between max-w-containerL m-auto">
+                <div class="flex gap-5">
+                    <a href="#" class="flex gap-1 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>                          
                         (225) 555-0118
                     </a>
-                    <a href="#" class="flex gap-1">
-                        icon
+                    <a href="#" class="flex gap-1 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>                          
                         michelle.rivera@example.com
                     </a>
                 </div>
@@ -48,133 +58,152 @@
                     <span class="font-semibold text-sm">
                         Follow us:
                     </span>
-                    <div class="flex items-center gap-1.5">
-                        <a href="#">1</a>
-                        <a href="#">1</a>
-                        <a href="#">1</a>
-                        <a href="#">1</a>
+                    <div class="flex items-center gap-3">
+                        <svg class="h-6 w-6 cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                        <svg class="h-6 w-6 cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                        <svg class="h-6 w-6 cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                        <svg class="h-6 w-6 cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
-        <nav class="flex justify-between m-auto max-w-5xl items-center gap-5 py-6">
+        <nav class="flex justify-between m-auto max-w-containerM items-center gap-5 py-6 px-4 lg:px-0">
             <h1 class="text-main text-2xl font-semibold">Bandage</h1>
-            <div class="flex items-center w-full justify-between">
-                <ul class="flex items-center gap-4">
-                    <li>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Shop
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Pages
-                        </a>
-                    </li>
-                </ul>
-                <div class="flex items-center gap-3">
-                    <div class="flex items-center gap-1 text-accent">
-                        <button type="button" class="flex gap-1 items-center">
-                            icon
-                            Login
-                        </button>
-                        <span>/</span>
-                        <button type="button" class="flex gap-1 items-center">
-                            Register
-                        </button>
-                    </div>
-                    <span>1</span>
-                    <span>1</span>
-                    <span>1</span>
+            <ul class="hidden lg:flex items-center gap-10 w-full justify-center font-semibold text-secondary">
+                <li class="transition-transform hover:scale-105">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li class="transition-transform hover:scale-105">
+                    <a href="#" class="flex items-center gap-1">
+                        Shop
+                        <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="transition-transform hover:scale-105">
+                    <a href="#">
+                        About
+                    </a>
+                </li>
+                <li class="transition-transform hover:scale-105">
+                    <a href="#">
+                        Blog
+                    </a>
+                </li>
+                <li class="transition-transform hover:scale-105">
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+                <li class="transition-transform hover:scale-105">
+                    <a href="#">
+                        Pages
+                    </a>
+                </li>
+            </ul>
+            <div class="hidden lg:flex items-center gap-6 w-1/3">
+                <div class="flex items-center gap-3 text-accent font-semibold">
+                    <button type="button" class="flex gap-1 items-center transition-transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accent">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>                          
+                        Login
+                    </button>
+                    <span>/</span>
+                    <button type="button" class="flex gap-1 items-center transition-transform hover:scale-105">
+                        Register
+                    </button>
                 </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-accent cursor-pointer transition-transform hover:scale-105">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>                  
+                <span class="flex items-center gap-1 text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer transition-transform hover:scale-105">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>                      
+                    1
+                </span>
+                <span class="flex items-center gap-1 text-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer transition-transform hover:scale-105">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>                                            
+                    1
+                </span>
             </div>
         </nav>
     </header>
     <main>
-        <div class="w-full m-auto max-w-5xl my-8 flex flex-col gap-6">
-            <div class="w-full flex justify-between ">
+        <div class="w-full m-auto max-w-containerL my-8 flex flex-col gap-6 px-4 lg:px-0">
+            <div class="w-full flex justify-between lg:px-4">
                 <h2 class="text-2xl text-main font-semibold">
                     Shop
                 </h2>
                 <div class="flex items-center gap-2">
                     <h3 class="text-sm font-semibold">Home</h3>
-                    <span>></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-secondary">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
                     <h3 class="text-sm font-semibold">Shop</h3>
                 </div>
             </div>
-            <div class="flex items-center gap-3 text-white justify-center">
-                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
-                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
-                    <span class="text-sm">5 items</span>
-                </div>
-                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
-                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
-                    <span class="text-sm">5 items</span>
-                </div>
-                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
-                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
-                    <span class="text-sm">5 items</span>
-                </div>
-                <div class="w-52 h-56 bg-black flex flex-col items-center justify-center gap-2">
-                    <h4 class="upercase text-2xl font-semibold">Cloths</h4>
-                    <span class="text-sm">5 items</span>
-                </div>
-            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-3 text-white justify-between categories"></div>
         </div>
-        <div class="flex justify-between w-full max-w-5xl m-auto">
-            <span class="text-secondary font-semibold text-sm">
+        <div class="flex flex-col gap-3 md:flex-row justify-between w-full items-center max-w-containerM m-auto text-sm px-4 lg:px-0">
+            <span class="text-secondary font-semibold">
                 Showing all 12 results
             </span>
             <div class="flex items-center gap-2">
                 <span class="text-secondary font-semibold text-sm">
                     Views: 
                 </span>
-                <span>1</span>
-                <span>1</span>
+                <span class="flex justify-center items-center p-2 border border-gray-100 rounded-md transition-transform hover:scale-105 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M1.5 7.125c0-1.036.84-1.875 1.875-1.875h6c1.036 0 1.875.84 1.875 1.875v3.75c0 1.036-.84 1.875-1.875 1.875h-6A1.875 1.875 0 0 1 1.5 10.875v-3.75Zm12 1.5c0-1.036.84-1.875 1.875-1.875h5.25c1.035 0 1.875.84 1.875 1.875v8.25c0 1.035-.84 1.875-1.875 1.875h-5.25a1.875 1.875 0 0 1-1.875-1.875v-8.25ZM3 16.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875v2.25c0 1.035-.84 1.875-1.875 1.875h-5.25A1.875 1.875 0 0 1 3 18.375v-2.25Z" clip-rule="evenodd" />
+                    </svg>                      
+                </span>
+                <span class="flex justify-center items-center p-2 border border-gray-100 rounded-md transition-transform hover:scale-105 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+                    </svg>                      
+                </span>
             </div>
             <div class="flex items-center gap-3">
                 <button 
                     type="button"
-                    class="text-sm text-secondary border border-secondary py-3 px-5"
+                    class="text-sm text-secondary border border-secondary py-3 px-5 transition-transform hover:scale-105 rounded-md flex items-center gap-1"
                 >
                     Popularity
+                    <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
                 </button>
                 <button 
                     type="button"
-                    class="text-sm text-white border border-accent py-3 px-5 bg-accent"
+                    class="text-sm text-white border border-accent py-3 px-5 bg-accent transition-transform hover:scale-105 rounded-md"
                 >
                     Filter
                 </button>
             </div>
         </div> 
-        <div class="w-full m-auto max-w-7xl">
-            <div class="w-full py-12 px-9 grid grid-cols-4 m-auto products"></div>
-            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+        <div class="w-full m-auto max-w-containerM px-4 lg:px-0">
+            <div class="w-full justify-items-center sm:justify-items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 m-auto products mt-12"></div>
+            <nav class="isolate inline-flex -space-x-px rounded-md mt-12 w-full justify-center" aria-label="Pagination">
                 <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                   <span class="sr-only">Previous</span>
                   First
                 </a>
-                <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-indigo-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
+                <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-accent px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
                 <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
                 <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
                 <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
@@ -183,68 +212,67 @@
                 </a>
             </nav>           
         </div>
-        <div class="w-full m-auto max-w-7xl flex gap-8 items-center my-12">
-            <img src="" alt="img">
-            <img src="" alt="img">
-            <img src="" alt="img">
-            <img src="" alt="img">
-            <img src="" alt="img">
-            <img src="" alt="img">
-        </div>
+        <div class="w-full m-auto max-w-containerM flex flex-col md:flex-row justify-between gap-8 items-center my-12 partners px-4 lg:px-0"></div>
     </main>
-    <footer class="w-full m-auto max-w-7xl flex flex-col gap-8">
-        <div class="w-full flex items-center justify-between">
+    <footer class="w-full m-auto max-w-containerM flex flex-col gap-8 px-4 lg:px-0">
+        <div class="w-full flex items-center justify-between py-14 border-b">
             <h2 class="text-main text-2xl font-semibold">Bandage</h2>
-            <div class="flex items-center gap-3">
-                <span>1</span>
-                <span>1</span>
-                <span>1</span>
+            <div class="flex items-center gap-5">
+                <svg class="h-6 w-6 text-accent cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+                <svg class="h-6 w-6 text-accent cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+                <svg class="h-6 w-6 text-accent cursor-pointer transition-transform hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
             </div>
         </div>
-        <div class="flex flex-col gap-6 w-full">
-            <div class="flex items-start justify-between">
+        <div class="flex flex-col gap-12 w-full pb-6">
+            <div class="hidden sm:flex items-start justify-between">
                 <div class="flex flex-col gap-3">
-                    <span>title</span>
-                    <ul>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
+                    <span class="font-semibold">Company Info</span>
+                    <ul class="flex flex-col gap-2 text-secondary font-semibold text-sm">
+                        <li>About Us</li>
+                        <li>Carrier</li>
+                        <li>We are hiring</li>
+                        <li>Blog</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <span>title</span>
-                    <ul>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
+                    <span class="font-semibold">Legal</span>
+                    <ul class="flex flex-col gap-2 text-secondary font-semibold text-sm">
+                        <li>About Us</li>
+                        <li>Carrier</li>
+                        <li>We are hiring</li>
+                        <li>Blog</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <span>title</span>
-                    <ul>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
+                    <span class="font-semibold">Features</span>
+                    <ul class="flex flex-col gap-2 text-secondary font-semibold text-sm">
+                        <li>Business Marketing</li>
+                        <li>User Analytic</li>
+                        <li>Live Chat</li>
+                        <li>Unlimited Support</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <span>title</span>
-                    <ul>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
+                    <span class="font-semibold">Resources</span>
+                    <ul class="flex flex-col gap-2 text-secondary font-semibold text-sm">
+                        <li>IOS & Android</li>
+                        <li>Watch a Demo</li>
+                        <li>Customers</li>
+                        <li>API</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <span>title</span>
-                    <input 
-                        type="text"
-                        class="input"
-                    >
+                    <span class="font-semibold">Get In Touch</span>
+                    <div class="relative flex items-stretch w-full">
+                        <input type="text" placeholder="Your Email" class="block w-full rounded-l-md py-3 px-5 border border-gray-400">
+                        <button type="button" class="px-6 rounded-r-md bg-accent text-white">Subscribe</button>
+                    </div>
                 </div>
             </div>
             <span class="text-secondary text-sm font-semibold">Made With Love By Finland All Right Reserved</span>

@@ -1,17 +1,17 @@
-import { store } from "./store.js";
+import { products } from "./store.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const productsContainer = document.querySelector('.products');
     
-    if (productsContainer && store) {
-        const productsHTML = store.map(({ title, description, price, discount, img }) => `
-            <div class="w-full max-w-60 h-fit flex flex-col gap-6">
+    if (productsContainer && products) {
+        const productsHTML = products.map(({ title, description, price, discount, img }) => `
+            <div class="w-full max-w-60 h-fit flex flex-col gap-6 items-center">
                 <img 
                     src="${img}" 
                     alt="product"
                     class="h-full max-h-72 w-full"
                 />
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2 items-center">
                     <h5 class="text-base font-semibold text-main">${title}</h5>
                     <span class="text-secondary text-sm font-semibold">${description}</span>
                     <div class="flex items-center gap-1">
