@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* NaNami render */
 
     let str = "ami";
-    str = "NaN" + "ami";
-    console.log("Task1 result:" + str);
+    str = NaN + str;
+    console.log("Task1 result: " + str);
 
     const area1 = document.querySelector('.task1');
     area1.innerHTML = str;
