@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW20</title>
+</head>
+<style>
+    body {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, hsla(238, 29%, 20%, 1) 0%, hsla(358, 64%, 28%, 1) 100%);
+        overflow: hidden;
+        gap: 40px;
+    }
+
+    .btn {
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        transition: transform 0.4s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+</style>
+<body>
+    <a href="./game1.html" class="btn">Game 1 🎲</a>
+    <a href="./game2.html" class="btn">Game2 ⚔️</a> 
+</body>
+</html>

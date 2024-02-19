@@ -1,0 +1,28 @@
+$title: #252B42;
+$text: #737373;
+$disable: #BDBDBD;
+$accent: #23856D;
+$subtitle: #23A6F0;
+$cardCover: rgba(45, 139, 192, 0.75);
+
+@mixin titleFont {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0.2px;
+}
+
+@mixin subTitleFont {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+@mixin textFont {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
