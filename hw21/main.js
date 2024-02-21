@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productsRow = document.querySelector(".products");
     const cartItemsContainer = document.querySelector(".cart-items");
     const totalPriceSpan = document.querySelector(".total-price");
+    const discountAppliedSpan = document.querySelector(".discount-applied");
     const couponInput = document.getElementById("couponInput");
     const applyCouponBtn = document.getElementById("applyCouponBtn");
 
@@ -185,6 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateCartDisplay = () => {
         cartItemsContainer.innerHTML = "";
         let totalPrice = 0;
+        let appliedDiscount = 0;
 
         for (const productId in cart) {
             const { title, price, quantity } = cart[productId];
@@ -198,8 +200,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (counter > 3) {
             const additionalDiscount = 0.05;
             totalPrice *= (1 - additionalDiscount);
+            appliedDiscount += additionalDiscount * 100;
         }
 
         totalPriceSpan.textContent = `Total: $${totalPrice.toFixed(2)}`;
+        discountAppliedSpan.textContent = `Applied Discount: ${appliedDiscount}%`;
     };
 });
