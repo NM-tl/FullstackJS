@@ -123,6 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const applyCouponBtn = document.getElementById("applyCouponBtn");
 
     const cart = {};
+    let counter = 0;
+    let couponApplied = false;
 
     products.forEach((product) => {
         const productElement = document.createElement("div");
@@ -154,8 +156,31 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         }
 
+        counter += 1;
         updateCartDisplay();
     };
+
+    const applyCoupon = () => {
+        if (!couponApplied) {
+            const enteredCoupon = couponInput.value.toUpperCase();
+            const validCoupon = coupons.find(coupon => coupon.name === enteredCoupon);
+
+            if (validCoupon) {
+                for (const productId in cart) {
+                    cart[productId].price *= (1 - validCoupon.value / 100);
+                }
+
+                couponApplied = true;
+                updateCartDisplay();
+            } else {
+                alert("Invalid coupon. Please try again.");
+            }
+        } else {
+            alert("Coupon already applied.");
+        }
+    };
+
+    applyCouponBtn.addEventListener("click", applyCoupon);
 
     const updateCartDisplay = () => {
         cartItemsContainer.innerHTML = "";
@@ -170,21 +195,11 @@ document.addEventListener("DOMContentLoaded", () => {
             totalPrice += price * quantity;
         }
 
-        applyCouponBtn.addEventListener("click", applyCoupon);
-
-        function applyCoupon() {
-            const enteredCoupon = couponInput.value.toUpperCase();
-            const validCoupon = coupons.find(coupon => coupon.name === enteredCoupon);
-
-            if (validCoupon) {
-                const discount = validCoupon.value / 100; // Convert percentage to decimal
-                totalPrice *= (1 - discount);
-                totalPriceSpan.textContent = `Total: $${totalPrice.toFixed(2)} (Discount applied: ${validCoupon.value}%)`;
-            } else {
-                alert("Invalid coupon. Please try again.");
-            }
+        if (counter > 3) {
+            const additionalDiscount = 0.05;
+            totalPrice *= (1 - additionalDiscount);
         }
 
         totalPriceSpan.textContent = `Total: $${totalPrice.toFixed(2)}`;
-    };    
+    };
 });
