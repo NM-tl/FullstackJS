@@ -26,7 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         hoursSpan.style.setProperty('--value', hours);
         minutesSpan.style.setProperty('--value', remainingMinutes);
+        arrivalNotification(hours, remainingMinutes);
     }
 
     convertMinutesToTime(parseInt(userInput));
+
+    function arrivalNotification(currentHours, currentMinutes) {
+        if (currentHours === 20 && currentMinutes === 31) {
+            alert("20:31 Прибув Годжо Сатору");
+        }
+    }
 });
