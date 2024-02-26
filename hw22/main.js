@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTimeline() {
         const timelineElement = document.querySelector('.leapYearsTimeline');
 
-        for (let year = 1900; year <= 2024; year++) {
-            timelineElement.innerHTML += isLeapYear(year) ?
-            `
+        for (let year = 1900; year <= 2100; year++) {
+            const leapYearElement = `
                 <li>
                     <div class="timeline-start">${year}</div>
                     <div class="timeline-middle">
@@ -16,9 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="timeline-end timeline-box">leap year</div>
                     <hr/>
-                </li> 
-            ` :
-            `
+                </li>`;
+            const simpleYearElement = `
                 <li>
                     <hr/>
                     <div class="timeline-start">${year}</div>
@@ -28,69 +26,74 @@ document.addEventListener('DOMContentLoaded', () => {
                     </svg>                                                      
                     </div>
                     <hr/>
-                </li>
-            `;
+                </li>`;
+            timelineElement.innerHTML += isLeapYear(year) ? leapYearElement : simpleYearElement;
         }
     }
     
-      renderTimeline();
+    renderTimeline();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const playButton = document.querySelector('.playButton');
+    const playButton = document.getElementById('playButton');
 
     playButton.addEventListener('click', () => {
         const enter = confirm("Want to play roulette?");
 
-        let budget = localStorage.getItem('budget') || 0;
-        let bid, color;
+        if (enter) {
+            let budget = parseInt(localStorage.getItem('budget')) || 0;
+            console.log('Initial budget:', budget);
 
-        if (!enter) return null;
+            budget && !isNaN(budget) && budget >= 50 ?
+            alert(`Your budget from the previous game is ${budget}`) :
+            null;
 
-        budget && !isNaN(budget) && budget >= 50 ?
-        alert(`Your budget from the previous game is ${budget}`) :
-        null;
-
-        while (!budget || isNaN(budget) || budget < 50) {
-            const initialBudget = prompt("Enter your initial budget (minimum 50):");
-            
-            if (initialBudget === null || initialBudget.trim() === '' || isNaN(initialBudget) || initialBudget < 50) {
-                alert("Please enter a valid initial budget (minimum 50).");
-            } else {
-                budget = initialBudget;
+            while (!budget || isNaN(budget) || budget < 50) {
+                const initialBudget = prompt("Enter your initial budget (minimum 50):");
+                
+                if (initialBudget === null || !initialBudget || isNaN(initialBudget) || initialBudget < 50) {
+                    alert("Please enter a valid initial budget (minimum 50).");
+                } else {
+                    budget = Number(initialBudget);
+                }
             }
-        }
 
-        do {
-            bid = prompt("Type your bid (minimum 50):");
-        } while (isNaN(bid) || bid < 50);
+            console.log('Updated budget after initial input:', budget);
 
-        do {
-            color = prompt("Choose color: red or black").toLowerCase();
-        } while (color !== 'red' && color !== 'black' && !color);
+            do {
+                bid = prompt("Type your bid (minimum 50):");
+            } while (isNaN(bid) || bid < 50);
 
-        const getRandomColor = () => ['red', 'black'][Math.floor(Math.random() * 2)];
-        const randomColor = getRandomColor();
+            do {
+                color = prompt("Choose color: red or black").toLowerCase();
+            } while (color !== 'red' && color !== 'black' && !color);
 
-        alert(`Random color is: ${randomColor}`);
+            // const getRedOrBlack = () => ['red', 'black'][Math.floor(Math.random() * 2)];
+            // const BetColor = getRedOrBlack();
+            const BetColor = "red";
 
-        if (color === randomColor) {
-            budget += Number(bid) * 2;
-            alert(`Congratulations! You guessed the color. Your budget is now ${budget}`);
+            alert(`Random color is: ${BetColor}`);
+
+            if (color === BetColor) {
+                budget += Number(bid) * 2;
+                alert(`Congratulations! You guessed the color. Your budget is now ${budget}`);
+            } else {
+                budget -= Number(bid);
+                alert(`Sorry, the color did not match. Your budget is now ${budget}`);
+            }
+
+            localStorage.setItem('budget', budget.toString());
+            console.log('Updated budget after the game:', budget);
+
+            if (budget >= 2000) {
+                alert("You won! Game over.");
+                localStorage.removeItem('budget');
+            } else if (budget === 0) {
+                alert("You lost. Game over.");
+                localStorage.removeItem('budget');
+            }
         } else {
-            budget -= Number(bid);
-            alert(`Sorry, the color did not match. Your budget is now ${budget}`);
-        }
-
-        localStorage.setItem('budget', budget);
-
-        if (budget === 2000) {
-            alert("You won! Game over.");
-            localStorage.removeItem('budget');
-        } else if (budget === 0) {
-            alert("You lost. Game over.");
-            localStorage.removeItem('budget');
+            alert("Okay, maybe next time!");
         }
     });
 });
-
