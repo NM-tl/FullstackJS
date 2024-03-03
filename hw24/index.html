@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW24</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body class="bg-white">
+    <header class="w-full py-6 px-10 shadow-md">
+        <h1 class="text-black text-2xl text-semibold">Simple fake bank</h1>
+    </header>
+    <main class="w-full md:h-screen">
+        <section class="m-auto p-10 flex flex-col xl:flex-row justify-between gap-5">
+            <div class="card w-full xl:w-[600px] h-fit bg-gradient-to-r from-indigo-500 to-blue-500 shadow-xl text-white">
+                <div class="card-body">
+                    <h2 class="card-title">Converter currency</h2>
+                    <div class="flex items-center gap-2 mb-5">
+                        <div class="badge badge-outline">USD</div>
+                        <span>to</span>
+                        <div class="badge badge-outline">EUR</div>
+                        <span>and</span>
+                        <div class="badge badge-outline">EUR</div>
+                        <span>to</span>
+                        <div class="badge badge-outline">USD</div>
+                    </div>
+                    <div class="flex flex-col gap-5 w-full">
+                        <label class="input input-bordered bg-white flex items-center gap-2 text-black max-w-xs">
+                            <input type="text" id="amountInput" class="grow" placeholder="Type with currency" />
+                        </label>
+                        <span id="result" class="xl:m-auto text-xl">will be result</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-full bg-gradient-to-r from-violet-500 to-fuchsia-900 shadow-xl text-white">
+                <div class="card-body gap-5 flex-col-reverse md:flex-row items-start justify-between">
+                    <div class="flex flex-col gap-5 m-auto md:m-0">
+                        <div class="flex gap-3 items-center mb-1.5">
+                            <h2 class="card-title">Deposit investment simulator</h2>
+                            <span class="text-3xl bg-base-100 rounded-full text-white px-4 py-1">5%</span>
+                        </div>
+                        <div role="tablist" class="tabs tabs-bordered text-white">
+                            <input type="radio" name="tab_1" role="tab" class="tab text-white text-xl" aria-label="Deposit" checked />
+                            <div role="tabpanel" class="tab-content mt-5">
+                                <label class="form-control w-full max-w-xs">
+                                    <div class="label">
+                                      <span class="label-text">Put money on deposit</span>
+                                    </div>
+                                    <input id="depositInput" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs bg-white text-black" />
+                                </label>
+                                <button id="deposit"  type="button" class="btn bg-black text-white mt-5 w-full sm:w-fit">Submit</button>
+                            </div>
+                            <input type="radio" name="tab_1" role="tab" class="tab text-white text-xl" aria-label="Withdraw" />
+                            <div role="tabpanel" class="tab-content mt-5 gap-3">
+                                <label class="form-control w-full max-w-xs">
+                                    <div class="label">
+                                      <span class="label-text">Withdraw money for deposit</span>
+                                    </div>
+                                    <input id="withdrawInput" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs bg-white text-black" />
+                                </label>
+                                <button id="withdraw" type="button" class="btn bg-black text-white mt-5 w-full sm:w-fit">Submit</button>
+                            </div>
+                        </div>
+                    </div>         
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col sm:flex-row items-end">
+                            <span class="badge badge-ghost text-white">Balance</span>
+                            <span id="balanceAmount" class="text-5xl">1000.00 USD</span>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <span id="profitYear">Profit for 1 year: 55.00 USD.</span>
+                            <span id="rate">Annual Interest Rate: 5%</span>
+                            <span id="totalProfit">Total Profit: 55.00 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
