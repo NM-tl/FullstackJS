@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW26</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body class="bg-base-100">
+    <header class="px-10 py-5 shadow-md text-xl text-bold text-info">HW26</header>
+    <main class="py-10 px-10 flex flex-col gap-10">
+        <section class="flex flex-col gap-5">
+            <div class="divider divider-warning text-xl text-bold">First part:</div>
+            <div class="mockup-code max-w-lg flex flex-col gap-3">
+                <pre data-prefix=">" class="text-primary"><code>Task 1</code></pre>
+                <pre><code id="res1" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 2</code></pre>
+                <pre><code id="res2" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 3</code></pre>
+                <pre><code id="res3" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 4</code></pre>
+                <pre><code id="res4" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 5</code></pre>
+                <pre><code id="res5" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 6</code></pre>
+                <pre><code id="res6" class="text-success"></code></pre>
+                <pre data-prefix=">" class="text-primary"><code>Task 7</code></pre>
+                <pre><code id="res7" class="text-success"></code></pre> 
+            </div>
+        </section>
+        <section class="divider divider-warning text-xl text-bold">Second part:</section>
+        <section>
+            <h2 class="text-xl text-bold">LittleNightCafe</h2>
+            <div class="flex gap-10">
+                <div class="card w-full max-w-md bg-base-100 shadow-xl h-fit">
+                    <div class="card-body flex flex-col gap-5">
+                      <h2 class="card-title">Make you order:</h2>
+                      <div class="flex flex-col gap-5">
+                        <div class="flex items-end justify-between">
+                            <label class="form-control w-full max-w-xs">
+                                <div class="label">
+                                  <span class="label-text">Pick the best fantasy drink:</span>
+                                </div>
+                                <select 
+                                    class="select select-bordered"
+                                    id="pickedDrink"
+                                >
+                                </select>
+                            </label>
+                            <button 
+                                class="btn btn-success"
+                                id="addDrink"    
+                            >
+                                Add
+                            </button>
+                        </div>
+                        <div class="flex items-end justify-between">
+                            <label class="form-control w-full max-w-xs">
+                                <div class="label">
+                                  <span class="label-text">Add the best fantasy dish:</span>
+                                </div>
+                                <select 
+                                    class="select select-bordered"
+                                    id="pickedDish"
+                                >
+                                </select>
+                            </label>
+                            <button 
+                                class="btn btn-success"
+                                id="addDish"
+                            >
+                                Add
+                            </button>
+                        </div>
+                        <div class="w-full border-t border-b border-base-300">
+                            <input 
+                                type="number" 
+                                placeholder="Table number" 
+                                class="input w-full" 
+                                id="tableNumber" 
+                            />
+                        </div>
+                      </div>
+                      <div class="p-5 bg-success text-primary-content rounded-md">
+                        <h3>Your order:</h3>
+                        <div 
+                            id="orderPreview"
+                            class="flex flex-col gap-3"
+                        ></div>
+                        <span id="orderPreviewTotal">Total:</span>
+                      </div>
+                      <div class="card-actions justify-end">
+                        <button 
+                            class="btn btn-info"
+                            id="submitOrder"
+                        >
+                            Submit
+                        </button>
+                      </div>
+                    </div>
+                </div>
+                <div class="card w-full max-w-md bg-base-100 shadow-xl h-fit">
+                    <div class="card-body">
+                      <h2 class="card-title">Orders:</h2>
+                      <div class="overflow-x-auto" id="ordersTable">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Number</th>
+                              <th>Table</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody id="ordersTable">
+                            <tr>
+                              <th>1</th>
+                              <th>21</th>
+                              <td>
+                                <div class="badge badge-info gap-2">
+                                    new
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>11</th>
+                                <td>
+                                  <div class="badge badge-info gap-2">
+                                      new
+                                  </div>
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+                <div class="card w-full bg-base-100 shadow-xl h-fit">
+                    <div class="card-body">
+                      <div class="flex justify-between items-center">
+                        <h2 class="card-title">Admin dashboard:</h2>
+                        <div class="badge badge-warning">All orders: +99</div>
+                      </div>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Number:</th>
+                            <th>Table:</th>
+                            <th>Dishes:</th>
+                            <th>Price:</th>
+                            <th>Status:</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>1</th>
+                            <th>21</th>
+                            <th>Coffee | Cheesecake</th>
+                            <th>80$</th>
+                            <th>
+                                <select class="select select-info status"></select>
+                            </th>
+                            <th>del</th>
+                          </tr>
+                          <tr>
+                            <th>2</th>
+                            <th>11</th>
+                            <th>Coffee | Cheesecake | Coffee | Cheesecake</th>
+                            <th>160$</th>
+                            <th>
+                                <select class="select select-info status"></select>
+                            </th>
+                            <th>del</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>    
+</body>
+</html>
