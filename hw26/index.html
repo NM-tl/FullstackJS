@@ -74,7 +74,7 @@
                                 Add
                             </button>
                         </div>
-                        <div class="w-full border-t border-b border-base-300">
+                        <div class="w-full border-t border-b border-gray-700">
                             <input 
                                 type="number" 
                                 placeholder="Table number" 
@@ -83,7 +83,7 @@
                             />
                         </div>
                       </div>
-                      <div class="p-5 bg-success text-primary-content rounded-md">
+                      <div class="p-5 border border-gray-700 text-white rounded-md">
                         <h3>Your order:</h3>
                         <div 
                             id="orderPreview"
@@ -113,7 +113,7 @@
                               <th>Status</th>
                             </tr>
                           </thead>
-                          <tbody id="ordersTable">
+                          <tbody id="usersTable">
                             <tr>
                               <th>1</th>
                               <th>21</th>
@@ -141,7 +141,10 @@
                     <div class="card-body">
                       <div class="flex justify-between items-center">
                         <h2 class="card-title">Admin dashboard:</h2>
-                        <div class="badge badge-warning">All orders: +99</div>
+                        <div 
+                            class="badge badge-warning"
+                            id="ordersCounter"
+                        >All orders: +99</div>
                       </div>
                       <table class="table">
                         <thead>
@@ -153,7 +156,7 @@
                             <th>Status:</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="adminTable">
                           <tr>
                             <th>1</th>
                             <th>21</th>

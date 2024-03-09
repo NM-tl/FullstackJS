@@ -149,10 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
         tableNumber = tablePicker.value;
     });
     
-    const submitOrder = document.getElementById("submitOrder");
-    
-    submitOrder.addEventListener("click", () => {
+    submit.addEventListener("click", () => {
         createOrder();
+        renderOrdersToTable();
     });
     
     const createOrder = () => {
@@ -176,8 +175,13 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
     
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        let orderNumber = localStorage.getItem("lastOrderNumber") || 0;
+    
+        orderNumber++;
+    
         const order = {
-            number: getOrderNumber(),
+            number: orderNumber,
             table: tableNumber,
             dishes: orderItems.map(item => {
                 const [name, price] = item.textContent.split('|').map(value => value.trim());
@@ -186,63 +190,85 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "new",
         };
     
-        const orders = JSON.parse(localStorage.getItem("orders")) || [];
         orders.push(order);
         localStorage.setItem("orders", JSON.stringify(orders));
+        localStorage.setItem("lastOrderNumber", orderNumber);
     
         orderPreview.innerHTML = "";
         totalDisplay.textContent = "";
         tableNumber = null;
         tablePicker.value = "";
     };
-    
-    
+
     const getOrders = () => {
         const orders = JSON.parse(localStorage.getItem("orders")) || [];
-        return orders;        
+        return orders;
     };
-
-    const mainTable = document.getElementById("ordersTable");
-
-    const renderOrders = () => {
-        const orders = getOrders();
-        if (orders.length === 0) {
-            mainTable.innerHTML = "No orders 😒";
-        };
-
-        console.log(orders);
-    };
-
-    renderOrders();
     
-
-
-    // function createOrder() {
-
-    // }
-
-    // getTotalAmount(orders, tableNumber) {
-
-    // }
-
-    let orders = [];    
-
-    let order1 = {
-    table: 1,
-    dishes: [
-    { name: "Coffee", price: 30 },
-    { name: "Cheesecake", price: 50 }
-    ],
-    status: "new"
+    const renderOrdersToTable = () => {
+        const renderOrdersToUsersTable = () => {
+            const orders = getOrders();
+            const usersTable = document.getElementById("usersTable");
+        
+            if (orders.length === 0) {
+                usersTable.innerHTML = "No orders 😒";
+            } else {
+                usersTable.innerHTML = "";
+                orders.forEach((order, index) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <th>${index + 1}</th>
+                        <th>${order.table}</th>
+                        <td>
+                            <div class="badge badge-info gap-2">
+                                ${order.status}
+                            </div>
+                        </td>
+                    `;
+                    usersTable.appendChild(row);
+                });
+            }
+        };
+        const renderOrdersToAdminTable = () => {
+            const orders = getOrders();
+            const adminTable = document.getElementById("adminTable");
+        
+            if (orders.length === 0) {
+                adminTable.innerHTML = "No orders 😒";
+            } else {
+                adminTable.innerHTML = "";
+                orders.forEach((order, index) => {
+                    const row = document.createElement("tr");
+                    const dishes = order.dishes.map(dish => dish.name).join(" | ");
+                    const totalPrice = order.dishes.reduce((sum, dish) => sum + dish.price, 0);
+                    
+                    row.innerHTML = `
+                        <th>${index + 1}</th>
+                        <th>${order.table}</th>
+                        <th>${dishes}</th>
+                        <th>${totalPrice}$</th>
+                        <th>
+                            <select class="select select-info status"></select>
+                        </th>
+                        <th>del</th>
+                    `;
+                    adminTable.appendChild(row);
+                });
+            }
+        };
+        renderOrdersToUsersTable();
+        renderOrdersToAdminTable();
     };
 
-    let order2 = {
-    table: 2,
-    dishes: [
-    { name: "Latte", price: 40 },
-    { name: "Tiramisu", price: 60 }
-    ],
-    status: "cook"
+    const countOrders = () => {
+        const counter = document.getElementById("ordersCounter");
+        counter.textContent = `Orders: ${JSON.parse(ordersData).length}`;
     };
 
+    /* getOrders */
+    const ordersData = localStorage.getItem("orders");
+    if (ordersData) {
+        renderOrdersToTable();
+        countOrders();
+    };
 });
