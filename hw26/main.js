@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resTasks[0].innerText = firstBookByAuthor
         ? `Перша книга автора ${authorToFind}: ${firstBookByAuthor.title}`
         : `Книга автора ${authorToFind} не знайдена.`;   
-    }
+    }    
     // Task 2
     {
         const numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -204,6 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const orders = JSON.parse(localStorage.getItem("orders")) || [];
         return orders;
     };
+
+    const renderStatusOptions = (select) => {
+        status.forEach((statusOption) => {
+            const option = new Option(statusOption, statusOption);
+            select.appendChild(option);
+        });
+    };
     
     const renderOrdersToTable = () => {
         const renderOrdersToUsersTable = () => {
@@ -217,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 orders.forEach((order, index) => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
-                        <th>${index + 1}</th>
+                        <th>${order.number}</th>
                         <th>${order.table}</th>
                         <td>
                             <div class="badge badge-info gap-2">
@@ -248,17 +255,42 @@ document.addEventListener("DOMContentLoaded", () => {
                         <th>${dishes}</th>
                         <th>${totalPrice}$</th>
                         <th>
-                            <select class="select select-info status"></select>
+                            <select class="select select-info status" data-order-id="${order.number}"></select>
                         </th>
                         <th>del</th>
                     `;
                     adminTable.appendChild(row);
+
+                    const statusSelect = row.querySelector(".status");
+                    renderStatusOptions(statusSelect);
+                    statusSelect.value = order.status;
                 });
             }
         };
         renderOrdersToUsersTable();
         renderOrdersToAdminTable();
     };
+
+    const statusSelects = document.querySelectorAll(".status");
+
+    statusSelects.forEach(select => {
+        select.addEventListener("change", () => {
+            const selectedStatus = select.value;
+            const orderId = parseInt(select.dataset.orderId, 10);
+
+            const orders = getOrders();
+            const updatedOrders = orders.map(order => {
+                if (order.number === orderId) {
+                    return { ...order, status: selectedStatus };
+                } else {
+                    return order;
+                }
+            });
+
+            localStorage.setItem("orders", JSON.stringify(updatedOrders));
+            renderOrdersToTable();
+        });
+    });
 
     const countOrders = () => {
         const counter = document.getElementById("ordersCounter");
