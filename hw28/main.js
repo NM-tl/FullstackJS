@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         deepFreeze(fileSystem);
         
         // test
-        // fileSystem.name = "newName";
+        fileSystem.name = "newName";
         // fileSystem.children[0].name = "newName";
-        // console.log(fileSystem)
+        console.log("Task 1:\n" + JSON.stringify(fileSystem, null, 2))
     }
     // Task 2
     {
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
         }
         
-        // const date1 = "2024-03-12";
-        // const date2 = "2024-03-20";
-        // console.log(`Кількість повних днів між ${date1} і ${date2}: ${daysBetweenDates(date1, date2)}`);
+        const date1 = "2024-03-12";
+        const date2 = "2024-03-20";
+        console.log(`Task 2:\nКількість повних днів між ${date1} і ${date2}: ${daysBetweenDates(date1, date2)}`);
     }
     // Task 3
     {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return age;
         };
 
-        // console.log(`Поточний вік: ${calculateAge("1996-01-01")}`);        
+        console.log(`Task 3:\nПоточний вік: ${calculateAge("1996-01-01")}`);        
     }
     // Task 4
     {
@@ -85,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return `${days} днів, ${hours} годин, ${minutes} хвилин, ${seconds} секунд`;
         };
         
-        // const futureDate = "2024-03-19T00:00:00";
-        // console.log(`Час до майбутньої дати: ${calculateTimeUntilFutureDate(futureDate)}`);    
+        console.log(`Task 4:\nЧас до майбутньої дати: ${calculateTimeUntilFutureDate("2024-03-19T00:00:00")}`);    
     }
     // Task 5
     {
@@ -104,8 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return workingDays;
         }
         
-        // const projectDeadline = new Date('2024-03-31');
-        // console.log(`Кількість робочих днів до терміну здачі проекту: ${calculateWorkingDays(projectDeadline)}`);
+        console.log(`Task 5:\nКількість робочих днів до терміну здачі проекту: ${calculateWorkingDays(new Date('2024-03-31'))}`);
     }
 });
    
