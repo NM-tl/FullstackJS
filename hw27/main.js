@@ -78,9 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 year: year,
                 available: true,
                 ratings: [],
+                borrowedBy: [],
                 addRating: function(user, rating) {
-                    if (this.available && rating >= 1 && rating <= 5) {
-                        this.ratings.push({ user: user.id, rating: rating });
+                    if (this.borrowedBy.includes(user.id) && rating >= 1 && rating <= 5) {
+                        this.ratings.push({ userId: user.id, rating: rating });
                     }
                 },
                 getAverageRating: function() {
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     return totalRating / this.ratings.length;
                 }
             };
-        }
+        }        
 
         function Library() {
             return {
@@ -110,14 +111,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     return this.books.filter(book => book.available);
                 },
                 borrowBook: function(title) {
-                    const book = this.books.find(book => book.title === title && book.available);
-                    if (book) {
-                        book.available = false;
-                        return book;
-                    } else {
-                        return null;
+                    const availableBook = this.books.find(function(book) {
+                        return book.title === title && book.available;
+                    });
+                
+                    if (availableBook) {
+                        availableBook.available = false;
+                        return availableBook;
                     }
-                },
+                
+                    const unavailableBook = this.books.find(function(book) {
+                        return book.title === title && !book.available;
+                    });
+                
+                    return unavailableBook || null;
+                },                
                 returnBook: function(title) {
                     const book = this.books.find(book => book.title === title && !book.available);
                     if (book) {
@@ -139,18 +147,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
         }
-
-        // const library = Library();
-        // const book = Book("Назва", "Автор", 2020);
-
-        // library.addBook(book);
-        // library.removeBook(book);
-
-        // let user = User("Ім'я");
-        // book.addRating(user, 5);
-
-        // user.borrowBook("Назва", library);
-        // user.returnBook("Назва", library);
-        // book.addRating(user, 5);
     }
 });
