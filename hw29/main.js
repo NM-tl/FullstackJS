@@ -209,6 +209,82 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Task 4
     {
+        // User
+        function User(username, email) {
+            this.username = username;
+            this.email = email;
+            this.loggedIn = false;
+        }
 
+        User.prototype.login = function() {
+            !this.loggedIn ? 
+            (System.addUser(this), console.log(`User ${this.username} logged in.`), this.loggedIn = true) : 
+            console.log(`User ${this.username} is already logged in.`);
+        };
+
+        User.prototype.logout = function() {
+            this.loggedIn ? 
+            (System.removeUser(this), console.log(`User ${this.username} logged out.`), this.loggedIn = false) : 
+            console.log(`User ${this.username} is not logged in.`);
+        };
+
+        // Admin
+        function Admin(username, email) {
+            User.call(this, username, email);
+        }
+
+        Admin.prototype = Object.create(User.prototype);
+        Admin.prototype.constructor = Admin;
+
+        Admin.prototype.removeUser = function(username) {
+            const user = System.getUserByUsername(username);
+            if (this.loggedIn && user) {
+                System.removeUser(username);
+                user.loggedIn = false;
+                console.log(`User ${username} removed by admin.`);
+            } else if (this.loggedIn && !user) {
+                console.log(`User ${username} does not exist.`);
+            } else {
+                console.log("Admin is not logged in.");
+            }
+        };        
+
+        // System
+        const System = {
+            users: {},
+            addUser(user) {
+                this.users[user.username] = user;
+            },
+            removeUser(user) {
+                delete this.users[user.username];
+            },
+            removeUserById(id) {
+                delete this.users[id];
+            },
+            getOnlineUsers() {
+                return console.log(Object.keys(this.users).filter(username => this.users[username].loggedIn));
+            },            
+            getUser(id) {
+                return this.users[id];
+            },
+            getUserByUsername(username) {
+                return this.users[username];
+            }
+        };        
+
+        // tests
+        const user1 = new User("user1", "user1@gmail.com");
+        const user2 = new User("user2", "user2@gmail.com");
+        const admin = new Admin("admin", "admin@gmail.com");
+
+        console.log("Task 4:")
+        admin.login();
+        user1.login();
+        user2.login();
+        System.getOnlineUsers();
+        user1.logout();
+        admin.removeUser(user2.username);
+        System.getOnlineUsers();
+        user2.login();
     }
 });
