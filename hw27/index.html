@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body class="w-full min-h-screen bg-white text-black">
+    <header class="px-10 py-5 shadow-md font-bold">
+        <h1>HW27</h1>
+    </header>
+    <main class="m-auto flex flex-col gap-10 p-10">
+        <section class="flex flex-col gap-5">
+            <h2 class="font-semibold text-2xl">Task 1</h2>
+            <div class="card w-full max-w-fit bg-gradient-to-r from-cyan-500 to-blue-500 text-primary-content shadow-md">
+                <div class="card-body flex flex-col gap-5">
+                  <h2 class="card-title font-bold text-3xl">Week weather:</h2>
+                  <ul id="weatherList" class="flex overflow-auto pb-5 md:pb-0"></ul>
+                  <div class="card-actions sm:justify-end mt-4">
+                    <button class="btn btn-neutral w-full sm:w-fit" id="getMin">Get min temp</button>
+                    <button class="btn btn-neutral w-full sm:w-fit" id="getMax">Get max temp</button>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
