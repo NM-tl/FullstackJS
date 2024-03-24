@@ -128,4 +128,87 @@ document.addEventListener("DOMContentLoaded", () => {
         Truck.start(); // Vehicle is starting...
         Truck.loadCargo(); // Truck is loading cargo...
     }
+    // Task 3
+    {
+        function Vehicle() {}
+        Vehicle.prototype.start = function() {
+            console.log("Vehicle is starting...");
+        };
+        Vehicle.prototype.stop = function() {
+            console.log("Vehicle is stopping...");
+        };
+
+        function Car() {}
+        Car.prototype = Object.create(Vehicle.prototype);
+        Car.prototype.constructor = Car;
+        Car.prototype.drive = function() {
+            console.log("Car is driving...");
+        };
+        Car.prototype.park = function() {
+            console.log("Car is parking...");
+        };
+
+        function Bike() {}
+        Bike.prototype = Object.create(Vehicle.prototype);
+        Bike.prototype.constructor = Bike;
+        Bike.prototype.ride = function() {
+            console.log("Bike is riding...");
+        };
+        Bike.prototype.lock = function() {
+            console.log("Bike is locking...");
+        };
+
+        function Truck() {}
+        Truck.prototype = Object.create(Car.prototype);
+        Truck.prototype.constructor = Truck;
+        Truck.prototype.loadCargo = function() {
+            console.log("Truck is loading cargo...");
+        };
+
+        function Sedan() {}
+        Sedan.prototype = Object.create(Car.prototype);
+        Sedan.prototype.constructor = Sedan;
+        Sedan.prototype.openTrunk = function() {
+            console.log("Sedan is opening trunk...");
+        };
+
+        function SportBike() {}
+        SportBike.prototype = Object.create(Bike.prototype);
+        SportBike.prototype.constructor = SportBike;
+        SportBike.prototype.race = function() {
+            console.log("SportBike is racing...");
+        };
+
+        function Scooter() {}
+        Scooter.prototype = Object.create(Bike.prototype);
+        Scooter.prototype.constructor = Scooter;
+        Scooter.prototype.deliverFood = function() {
+            console.log("Scooter is delivering food...");
+        };
+
+        // tests
+        console.log("Task 3:");
+        const car = new Car();
+        car.start(); // Vehicle is starting...
+        car.drive(); // Car is driving...
+
+        const truck = new Truck();
+        truck.start(); // Vehicle is starting...
+        truck.loadCargo(); // Truck is loading cargo...
+
+        Vehicle.prototype.start = function() {
+            console.log("Vehicle drive");
+        };
+        Vehicle.prototype.stop = function() {
+            console.log("Vehicle broken");
+        };
+
+        const sedan = new Sedan();
+        sedan.start(); // Vehicle drive
+        sedan.stop(); // Vehicle broken
+    }
+    // Task 4
+    {
+
+    }
 });
