@@ -29,3 +29,22 @@
         }   
     });
 }
+
+// Task 2
+import { images } from './store.js';
+{
+    document.addEventListener("DOMContentLoaded", () => {
+        const sectionTitle = document.querySelector("h1");
+        const gridContainer = document.createElement('div');
+        gridContainer.classList.add('grid', 'grid-cols-4', 'gap-5', 'mt-5');
+        sectionTitle.insertAdjacentElement('afterend', gridContainer);
+    
+        images.forEach(image => {
+            gridContainer.innerHTML += `
+                <div class="col-span-1">
+                    <img src="${image.src}" alt="${image.alt}" class="w-full h-full object-cover">
+                </div>
+            `;
+        });
+    });    
+}
