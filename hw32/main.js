@@ -36,15 +36,28 @@ import { images } from './store.js';
     document.addEventListener("DOMContentLoaded", () => {
         const sectionTitle = document.querySelector("h1");
         const gridContainer = document.createElement('div');
-        gridContainer.classList.add('grid', 'grid-cols-4', 'gap-5', 'mt-5');
+        gridContainer.classList.add('grid', 'grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'gap-5', 'mt-5');
         sectionTitle.insertAdjacentElement('afterend', gridContainer);
     
         images.forEach(image => {
             gridContainer.innerHTML += `
-                <div class="col-span-1">
+                <div class="col-span-1 game">
                     <img src="${image.src}" alt="${image.alt}" class="w-full h-full object-cover">
                 </div>
             `;
         });
-    });    
+
+        // Added shuffle trigger
+
+        function shuffle(array) {
+            return [...array].sort(() => Math.random() - 0.5);
+        }
+
+        gridContainer.addEventListener('click', () => {
+            const shuffledImages = shuffle(Array.from(gridContainer.querySelectorAll('.game img')));
+            shuffledImages.forEach((image, index) => {
+                image.parentNode.style.order = index + 1;
+            });
+        });
+    });
 }
