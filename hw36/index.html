@@ -1,79 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW36</title>
-    <script defer type="module" src="./js/timer.js"></script>
-    <style>
-        .timer-container {
-  text-align: center;
-}
-
-.timer-progress {
-  height: 10px;
-  background-color: green;
-}
-
-.timer-display {
-  font-size: 24px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW36</title>
+  <script defer type="module" src="./js/timer.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <main>
-        <section>
-            <div class="timer-container">
-                <div class="timer-progress"></div>
-                <div class="timer-display">00:00</div>
-                <button id="startBtn">Start</button>
-                <button id="pauseBtn">Pause</button>
-                <button id="resetBtn">Reset</button>
-              </div>
-              
-              <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Set Timer (in minutes): <input type="number" id="modalInput" value="5"></p>
-                  <button id="setTimerBtn">Set Timer</button>
+    <main class="bg-white w-full h-screen flex item-center justify-center">
+        <section class="m-auto w-full max-w-lg">
+            <div class="flex flex-col gap-3 p-6 rounded-xl border border-slate-300 shadow-md">
+                <div id="timer" class="text-7xl font-bold text-center cursor-pointer text-black">00:00</div>
+                <div id="progress" class="h-[10px] rounded-full bg-green-500"></div>
+                <div class="flex gap-3 justify-center">
+                  <button 
+                    id="startBtn" 
+                    class="bg-slate-200 text-black border border-slate-300 rounded-md py-2 flex justify-center item-center w-full max-w-[80px] transition-colors hover:bg-slate-400"
+                  >
+                    Start
+                  </button>
+                  <button 
+                    id="pauseBtn"
+                    class="bg-slate-200 text-black border border-slate-300 rounded-md py-2 flex justify-center item-center w-full max-w-[80px] transition-colors hover:bg-slate-400"
+                  >
+                    Pause
+                  </button>
+                  <button 
+                    id="resetBtn"
+                    class="bg-slate-200 text-black border border-slate-300 rounded-md py-2 flex justify-center item-center w-full max-w-[80px] transition-colors hover:bg-slate-400"
+                  >
+                    Reset
+                  </button>
                 </div>
-              </div>              
+              </div>            
         </section>
+        <div id="overlay" class="bg-black bg-opacity-20 absolute w-full h-screen hidden"></div>
+        <div id="modal" class="absolute hidden top-1/2 z-10">
+          <div class="flex px-6 pb-6 pt-12 bg-white rounded-xl items-center gap-3">
+            <button type="button" id="close" class="top-0 right-2 absolute text-4xl">&times;</button>
+            <p class="text-slate-400 font-semibold">Set Timer (in minutes): <input type="number" id="modalInput" value="5" class="input bg-white border border-slate-300"></p>
+            <button id="setTimerBtn" class="btn">Set Timer</button>
+          </div>
+        </div>
     </main>
 </body>
 </html>
